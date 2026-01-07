@@ -10,4 +10,8 @@ public class MathUtils {
         }
         return quotient;
     }
+    
+    public void mod(int dividend, int divisor) {
+        System.out.println("Hello");
+    }
 }
