@@ -1,5 +1,5 @@
 package tests.java;
-import main.java.MathUtils;
+import com.java.MathUtils;
 
 public class MathUtilsTest {
     public static void main(String[] args) {

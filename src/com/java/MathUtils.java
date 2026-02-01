@@ -1,4 +1,4 @@
-package main.java;
+package com.java;
 
 public class MathUtils {
     public int divide(int dividend, int divisor) {

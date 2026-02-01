@@ -1,4 +1,4 @@
-package main.java;
+package com.java;
 
 import java.util.HashMap;
 import java.util.Scanner;
