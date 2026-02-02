@@ -76,13 +76,4 @@ public class Stack<T>  {
         }
     }
 
-    public void is_parenthesis_balanced(String input_parenthesis) {
-        int index = 0;
-        String opening_parenthesis = "([{";
-        char[] parenthesis = input_parenthesis.toCharArray();
-        char current = parenthesis[index]
-        while (index < input_parenthesis.length()) {
-            if ()
-        }
-    }
 }
