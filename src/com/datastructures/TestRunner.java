@@ -1,8 +1,8 @@
-package com.implementations;
+package com.datastructures;
 import java.util.*;
 public class TestRunner {
     public static void main(String[] args) {
-        Stack<Object> stack = new Stack<Object>();
+        Stack<String> stack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
 
         stack.push("A");
