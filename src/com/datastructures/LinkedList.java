@@ -22,7 +22,7 @@ public class LinkedList<T> {
     public List<T> print_list() {
         Node<T> last_node = this.head;
         
-        while (last_node.next != null) {
+        while (last_node != null) {
             nodes.add(last_node.data);
             last_node = last_node.next;
         }
