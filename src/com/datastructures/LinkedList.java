@@ -35,4 +35,33 @@ public class LinkedList<T> {
         new_node.next = this.head;
         this.head = new_node;
     }
+
+    public void insert_after(Node<T> prev_node, T data) {
+        if (prev_node == null) {
+            System.out.println("Node cannot be null");
+            return;
+        }
+        else {
+            Node<T> new_node = new Node<>(data);
+            new_node.next = prev_node.next;
+            prev_node.next = new_node;
+        }
+    }
+
+    public void delete_node(Node<T> node_to_delete) {
+        Node<T> current_node = this.head;
+        if (node_to_delete == null) {
+            System.out.println("Node provided to delete does not exist");
+            return;
+        }
+        else {
+            if (current_node.data == node_to_delete) {
+                this.head = current_node.next;
+            }
+            else {
+            while (current_node.next != )
+            }
+        }
+        
+    }
 }
