@@ -13,7 +13,7 @@ public class LinkedList<T> {
             this.head = new_node;
         }
         Node<T> last_node = this.head;
-        while (last_node != null) {
+        while (last_node.next != null) {
             last_node = last_node.next;
         }
         last_node = new_node;
@@ -22,8 +22,8 @@ public class LinkedList<T> {
     public List<T> print_list() {
         Node<T> last_node = this.head;
         
-        while (last_node != null) {
-            nodes.add(last_node.data);
+        while (last_node.next != null) {
+            nodes.add(last_node.data());
             last_node = last_node.next;
         }
         return nodes;
