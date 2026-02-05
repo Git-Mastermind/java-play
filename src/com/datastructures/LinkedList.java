@@ -11,18 +11,19 @@ public class LinkedList<T> {
         Node<T> new_node = new Node<>(data);
         if (this.head == null) {
             this.head = new_node;
+            return;
         }
         Node<T> last_node = this.head;
         while (last_node.next != null) {
             last_node = last_node.next;
         }
-        last_node = new_node;
+        last_node.next = new_node;
     }
 
     public List<T> print_list() {
         Node<T> last_node = this.head;
         
-        while (last_node.next != null) {
+        while (last_node != null) {
             nodes.add(last_node.data());
             last_node = last_node.next;
         }
