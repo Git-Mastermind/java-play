@@ -29,4 +29,10 @@ public class LinkedList<T> {
         }
         return nodes;
     }
+
+    public void prepend(T data) {
+        Node<T> new_node = new Node<>(data);
+        new_node.next = this.head;
+        this.head = new_node;
+    }
 }
