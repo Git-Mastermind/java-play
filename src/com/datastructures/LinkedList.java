@@ -48,18 +48,27 @@ public class LinkedList<T> {
         }
     }
 
-    public void delete_node(Node<T> node_to_delete) {
+    public void delete_node(T node_to_delete) {
         Node<T> current_node = this.head;
+        Node<T> prev_node = null;
         if (node_to_delete == null) {
             System.out.println("Node provided to delete does not exist");
             return;
         }
         else {
-            if (current_node.data == node_to_delete) {
+            if (current_node.data.equals(node_to_delete)) {
                 this.head = current_node.next;
             }
             else {
-            while (current_node.next != )
+                while (current_node != null && current_node.data.equals(node_to_delete)) {
+                    prev_node = current_node;
+                    current_node = current_node.next;
+                }
+                if (current_node == null) {
+                    return;
+                }
+                prev_node.next = current_node.next;
+
             }
         }
         
