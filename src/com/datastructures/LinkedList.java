@@ -73,4 +73,33 @@ public class LinkedList<T> {
         }
         
     }
+
+    public void delete_node_by_pos(int pos) {
+        Node<T> current_node = this.head;
+        Node<T> prev_node = null;
+        int index = 0;
+        if (pos == 0) {
+            this.head = current_node.next;
+        } 
+        else {
+            while (current_node != null && index < pos) {
+                prev_node = current_node;
+                current_node = current_node.next;
+                index += 1;
+            }
+            prev_node.next = current_node.next;
+        }
+    }
+
+    public int len() {
+        Node<T> current_node = this.head;
+        int counter = 0;
+
+        while (current_node != null) {
+            counter += 1;
+            current_node = current_node.next;
+        }
+
+        return counter;
+    }
 }

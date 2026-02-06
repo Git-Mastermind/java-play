@@ -8,8 +8,7 @@ public class TestRunner {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
-        linkedList.delete_node("B");
-        System.out.println(linkedList.print_list());
+        System.out.println(linkedList.len());
        
 
         
