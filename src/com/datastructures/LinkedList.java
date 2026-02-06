@@ -91,7 +91,7 @@ public class LinkedList<T> {
         }
     }
 
-    public int len() {
+    public int len_iter() {
         Node<T> current_node = this.head;
         int counter = 0;
 
@@ -101,5 +101,14 @@ public class LinkedList<T> {
         }
 
         return counter;
+    }
+
+    public int len_recur(Node<T> node) {
+        if (node.next == null) {
+            return 1;
+        }
+        else {
+            return 1 + this.len_recur(node.next);
+        }
     }
 }
