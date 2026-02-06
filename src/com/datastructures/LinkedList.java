@@ -60,7 +60,7 @@ public class LinkedList<T> {
                 this.head = current_node.next;
             }
             else {
-                while (current_node != null && current_node.data.equals(node_to_delete)) {
+                while (current_node != null && !current_node.data.equals(node_to_delete)) {
                     prev_node = current_node;
                     current_node = current_node.next;
                 }

@@ -8,9 +8,9 @@ public class TestRunner {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
-        System.out.println(linkedList.print_list());
         linkedList.delete_node("B");
         System.out.println(linkedList.print_list());
+       
 
         
 
