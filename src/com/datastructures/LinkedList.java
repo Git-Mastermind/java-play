@@ -6,6 +6,7 @@ import java.util.List;
 public class LinkedList<T> {
     Node<T> head = null;
     List<T> nodes = new ArrayList<T>();
+    Node<Integer> int_head = null;
 
     public void append(T data) {
         Node<T> new_node = new Node<>(data);
@@ -158,4 +159,29 @@ public class LinkedList<T> {
         }
         this.head = prev;
     }
+
+    public Node<Integer> merge_sorted(Node<Integer> llist) {
+        Node<Integer> p = this.int_head;
+        Node<Integer> q = llist;
+        Node<Integer> s = null;
+
+        if (p == null || q == null) {
+            return s;
+        }
+        else {
+            while (p != null && q != null) {
+            if (p.data < q.data) {
+                s = p;
+                p = s.next;
+                }
+            else if (p.data > q.data) {
+                s = q;
+                q = s.next;
+                }
+            }
+        }
+        return s;
+        
+    }
+
 }
