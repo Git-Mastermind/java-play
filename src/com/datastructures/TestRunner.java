@@ -7,17 +7,13 @@ public class TestRunner {
         LinkedList<Integer> linkedListInt = new LinkedList<>();
         LinkedList<Integer> llist = new LinkedList<>();
 
-        linkedListInt.append(1);
-        linkedListInt.append(5);
-        linkedListInt.append(6);
-        linkedListInt.append(8);
-
-        llist.append(2);
-        llist.append(3);
-        llist.append(4);
-        llist.append(7);
-
-       System.out.println(linkedListInt.merge_sorted(llist.head));
+        linkedListStr.append("A");
+        linkedListStr.append("B");
+        linkedListStr.append("C");
+        linkedListStr.append("D");
+        linkedListStr.append("D");
+        linkedListStr.de_dupe();
+        linkedListStr.print_list();
 
 
 

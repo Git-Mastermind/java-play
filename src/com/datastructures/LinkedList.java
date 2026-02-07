@@ -21,6 +21,19 @@ public class LinkedList<T> {
         last_node.next = new_node;
     }
 
+    public void append_int(Integer data) {
+        Node<Integer> new_node = new Node<>(data);
+        if (this.int_head == null) {
+            this.int_head = new_node;
+            return;
+        }
+        Node<Integer> last_node = this.int_head;
+        while (last_node.next != null) {
+            last_node = last_node.next;
+        }
+        last_node.next = new_node;
+    }
+
     public void print_list() {
         Node<T> last_node = this.head;
         
@@ -168,15 +181,23 @@ public class LinkedList<T> {
         Node<Integer> new_head = null;
 
         if (p != null && q != null) {
-            if (p.data < q.data) {
+            if (p.data == q.data) {
                 s = p;
+                new_head = p;
                 p = s.next;
+                
+            }
+            else if (p.data < q.data) {
+                s = p;
                 new_head = s;
+                p = s.next;
+                
             }
             else if (p.data > q.data) {
                 s = q;
-                q = s.next;
                 new_head = s;
+                q = s.next;
+                
             }
         }
 
@@ -185,18 +206,38 @@ public class LinkedList<T> {
         }
         else {
             while (p != null && q != null) {
-            if (p.data < q.data) {
-                s = p;
-                p = s.next;
-                }
-            else if (p.data > q.data) {
-                s = q;
-                q = s.next;
-                }
+                if (p.data < q.data) {
+                    s.next = p;
+                    p = p.next;
+                    }
+                else if (p.data > q.data) {
+                    s.next = q;
+                    q = q.next;
+                    }
+                s = s.next;
             }
+            
         }
         return new_head;
         
+    }
+
+    public void de_dupe() {
+        ArrayList<T> unique_elements = new ArrayList<>();
+        Node<T> current = this.head;
+        Node<T> prev = null;
+
+        while (current != null) {
+            if (unique_elements.contains(current.data)) {
+                prev.next = current.next;
+            }
+            else {
+                unique_elements.add(current.data);
+            }
+            prev = current;
+            current = current.next;
+        }
+
     }
 
 }
