@@ -107,7 +107,7 @@ public class LinkedList<T> {
 
     public int len_iter() {
         Node<T> current_node = this.head;
-        int counter = 0;
+        int counter = 1;
 
         while (current_node != null) {
             counter += 1;
@@ -237,6 +237,20 @@ public class LinkedList<T> {
             prev = current;
             current = current.next;
         }
+
+    }
+
+    public T nth_from_last(int n) {
+        Node<T> current = this.head;
+        int index = this.len_iter() - n;
+        int counter = 1;
+
+        while (counter != index) {
+            current = current.next;
+            counter += 1;
+        }
+        return current.data;
+
 
     }
 

@@ -11,9 +11,8 @@ public class TestRunner {
         linkedListStr.append("B");
         linkedListStr.append("C");
         linkedListStr.append("D");
-        linkedListStr.append("D");
-        linkedListStr.de_dupe();
-        linkedListStr.print_list();
+        linkedListStr.append("E");
+        System.out.println(linkedListStr.nth_from_last(2));
 
 
 
