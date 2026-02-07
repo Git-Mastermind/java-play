@@ -265,5 +265,30 @@ public class LinkedList<T> {
             current = current.next;
         }
         return counter;
-}
+    }
+
+    public boolean is_palindrome(Node<T> llist1, Node<T> llist2) {
+        ArrayList<T> llist1_values = new ArrayList<>();
+        ArrayList<T> llist2_values = new ArrayList<>();
+        Node<T> current = llist1;
+        boolean is_palindrome = false;
+
+
+        while (current != null) {
+            llist1_values.add(current.data);
+            current = current.next;
+        }
+        current = llist2;
+
+        while (current != null) {
+            llist2_values.add(current.data);
+            current = current.next;
+        }
+
+        if (llist1_values.equals(llist2_values)) {
+            is_palindrome = true;
+        }
+        
+        return is_palindrome;
+    }
 }
