@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LinkedList<T> {
     Node<T> head = null;
-    List<T> nodes = new ArrayList<T>();
+    
     Node<Integer> int_head = null;
 
     public void append(T data) {
@@ -35,13 +35,25 @@ public class LinkedList<T> {
     }
 
     public void print_list() {
+        ArrayList<T> nodes = new ArrayList<T>();
         Node<T> last_node = this.head;
+        String formatted_statement = "";
         
         while (last_node != null) {
             nodes.add(last_node.data());
             last_node = last_node.next;
         }
-        System.out.println(nodes);
+        for (int i = 0; i < nodes.size(); i++) {
+            if (i == 0) {
+                formatted_statement = formatted_statement.concat(String.valueOf(nodes.get(i)));
+                formatted_statement = formatted_statement.concat(" ");
+            }
+            else {
+                formatted_statement = formatted_statement.concat("---> ");
+                formatted_statement = formatted_statement.concat(String.valueOf(nodes.get(i)));
+            }
+        }
+        System.out.println(formatted_statement);
     }
 
     public void prepend(T data) {

@@ -13,12 +13,7 @@ public class TestRunner {
         linkedListStr.append("C");
         linkedListStr.append("D");
 
-        linkedListStr2.append("A");
-        linkedListStr2.append("B");
-        linkedListStr2.append("C");
-        linkedListStr2.append("C");
-
-        System.out.println(linkedListStr.is_palindrome(linkedListStr.head, linkedListStr2.head));
+        linkedListStr.print_list();
 
 
 
