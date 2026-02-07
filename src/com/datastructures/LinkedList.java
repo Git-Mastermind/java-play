@@ -150,6 +150,7 @@ public class LinkedList<T> {
         Node<T> prev = null;
         Node<T> next = null;
         Node<T> current = this.head;
+        
 
         while (current != null) {
             next = current.next;
@@ -164,6 +165,20 @@ public class LinkedList<T> {
         Node<Integer> p = this.int_head;
         Node<Integer> q = llist;
         Node<Integer> s = null;
+        Node<Integer> new_head = null;
+
+        if (p != null && q != null) {
+            if (p.data < q.data) {
+                s = p;
+                p = s.next;
+                new_head = s;
+            }
+            else if (p.data > q.data) {
+                s = q;
+                q = s.next;
+                new_head = s;
+            }
+        }
 
         if (p == null || q == null) {
             return s;
@@ -180,7 +195,7 @@ public class LinkedList<T> {
                 }
             }
         }
-        return s;
+        return new_head;
         
     }
 
