@@ -12,7 +12,9 @@ public class TestRunner {
         linkedListStr.append("C");
         linkedListStr.append("D");
         linkedListStr.append("E");
-        System.out.println(linkedListStr.nth_from_last(2));
+        linkedListStr.append("E");
+        linkedListStr.append("E");
+        System.out.println(linkedListStr.count_occurences("E"));
 
 
 

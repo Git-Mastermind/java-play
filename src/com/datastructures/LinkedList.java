@@ -254,4 +254,16 @@ public class LinkedList<T> {
 
     }
 
+    public int count_occurences(T input_data) {
+        Node<T> current = this.head;
+        int counter = 0;
+
+        while (current != null) {
+            if (current.data == input_data) {
+                counter += 1;
+            }
+            current = current.next;
+        }
+        return counter;
+}
 }
