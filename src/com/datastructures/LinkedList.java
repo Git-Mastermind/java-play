@@ -20,14 +20,14 @@ public class LinkedList<T> {
         last_node.next = new_node;
     }
 
-    public List<T> print_list() {
+    public void print_list() {
         Node<T> last_node = this.head;
         
         while (last_node != null) {
             nodes.add(last_node.data());
             last_node = last_node.next;
         }
-        return nodes;
+        System.out.println(nodes);
     }
 
     public void prepend(T data) {
@@ -110,5 +110,52 @@ public class LinkedList<T> {
         else {
             return 1 + this.len_recur(node.next);
         }
+    }
+
+    public void swap_node(T first_node, T second_node) {
+        Node<T> curr_1 = this.head;
+        Node<T> curr_2 = this.head;
+        Node<T> prev_node_1 = null;
+        Node<T> prev_node_2 = null;
+        if (first_node == second_node) {
+            return;
+        }
+        while (curr_1 != null && curr_1 != first_node) {
+            prev_node_1 = curr_1;
+            curr_1 = curr_1.next;
+        }
+        
+        while (curr_2 != null && curr_2 != second_node) {
+            prev_node_2 = curr_2;
+            curr_2 = curr_2.next;
+        }
+
+        if (prev_node_1 != null) {
+            prev_node_1 = curr_2;
+        }
+        else {
+            curr_1 = this.head;
+        }
+        if (prev_node_2 != null) {
+            prev_node_2 = curr_1;
+        }
+        else {
+            curr_2 = this.head;
+        }
+
+    }
+    
+    public void reverse() {
+        Node<T> prev = null;
+        Node<T> next = null;
+        Node<T> current = this.head;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        this.head = prev;
     }
 }

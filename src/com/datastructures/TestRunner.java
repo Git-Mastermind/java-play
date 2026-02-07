@@ -8,7 +8,8 @@ public class TestRunner {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
-        System.out.println(linkedList.len_recur(linkedList.head));
+        linkedList.reverse();
+        linkedList.print_list();
        
 
         
