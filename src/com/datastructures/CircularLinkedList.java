@@ -115,7 +115,7 @@ public class CircularLinkedList<T> {
         }
 
         return current.data;
-
     }
+
 
 }

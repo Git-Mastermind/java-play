@@ -2,7 +2,7 @@ package com.datastructures;
 import java.util.ArrayList;
 
 
-public class LinkedList<T> {
+public class SinglyLinkedList<T> {
     Node<T> head = null;
     
     Node<Integer> intHead = null;
