@@ -31,4 +31,16 @@ public class CircularLinkedList<T> {
         }
     }
 
+    public void prepend(T data) {
+        Node<T> newNode = new Node<>(data);
+        Node<T> current = this.head;
+
+        while (current.next != this.head) {
+            current = current.next;
+        }
+        current.next = newNode;
+        newNode.next = this.head;
+        this.head = newNode;
+    } 
+
 }
