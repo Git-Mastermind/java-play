@@ -43,4 +43,25 @@ public class CircularLinkedList<T> {
         this.head = newNode;
     } 
 
+    public void remove(T value) {
+        Node<T> current = this.head;
+        Node<T> previous = null;
+
+        if (value == this.head.data) {
+            while (current.next != this.head) {
+                current = current.next;
+            }
+            current.next = this.head.next;
+            this.head = this.head.next;
+            return;
+        }
+
+        while (current.data != value) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = current.next;  
+
+    }
+
 }
