@@ -63,5 +63,15 @@ public class CircularLinkedList<T> {
         previous.next = current.next;  
 
     }
+    public int len() {
+        int counter = 1;
+        Node<T> current = this.head;
+        
+        while (current.next != this.head) {
+            counter ++;
+            current = current.next;
+        }
+        return counter;
+    }
 
 }
