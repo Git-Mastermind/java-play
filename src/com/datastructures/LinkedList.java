@@ -1,4 +1,5 @@
 package com.datastructures;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,8 +53,20 @@ public class LinkedList<T> {
                 formatted_statement = formatted_statement.concat("---> ");
                 formatted_statement = formatted_statement.concat(String.valueOf(nodes.get(i)));
             }
+            i++;
         }
         System.out.println(formatted_statement);
+    }
+
+    public void print_list_noformat() {
+        ArrayList<T> nodes = new ArrayList<>();
+        Node<T> current = this.head;
+
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+        // System.out.println(nodes);
     }
 
     public void prepend(T data) {
@@ -302,5 +315,20 @@ public class LinkedList<T> {
         }
         
         return is_palindrome;
+    }
+
+    public void tail_to_head() {
+        Node<T> head = this.head;
+        Node<T> current = this.head;
+        Node<T> prev = null;
+        Node<T> second_to_last = null;
+
+        while (current.next.next != null) {
+            second_to_last = current;
+            prev = current.next;
+            current = current.next.next;
+        }
+        prev.next = head.next;
+        second_to_last.next = null; 
     }
 }

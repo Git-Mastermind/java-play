@@ -12,7 +12,8 @@ public class TestRunner {
         linkedListStr.append("C");
         linkedListStr.append("D");
 
-        linkedListStr.print_list();
+        linkedListStr.tail_to_head();
+        linkedListStr.print_list_noformat();
 
 
 
