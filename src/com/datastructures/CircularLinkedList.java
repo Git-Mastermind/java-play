@@ -99,19 +99,19 @@ public class CircularLinkedList<T> {
 
     public T josepheusCircle(int step) {
         Node<T> current = this.head;
-        Node<T> previous = current;
         int stepCounter = 1;
         int nodeCounter = this.len();
 
-        while (nodeCounter != 1) {
-            if (stepCounter == step) {
-                this.remove(current.data);
-                previous.next = current.next;
+        while (nodeCounter > 1) {
+            stepCounter = 1;
+            while (stepCounter != step) {
+                current = current.next;
+                stepCounter ++;
             }
-            previous = current;
+            System.out.println("removing..." + current.data.toString());
+            this.remove(current.data);
             current = current.next;
             nodeCounter --;
-            stepCounter = 1;
         }
 
         return current.data;
