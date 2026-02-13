@@ -11,6 +11,6 @@ public class TestRunner {
         linkedList.append("D");
         
 
-        linkedList.splitList();
+        System.out.println(linkedList.josepheusCircle(2));
     }
 }

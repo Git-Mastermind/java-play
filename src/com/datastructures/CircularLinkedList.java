@@ -97,4 +97,25 @@ public class CircularLinkedList<T> {
         second_llist.printList();
     }
 
+    public T josepheusCircle(int step) {
+        Node<T> current = this.head;
+        Node<T> previous = current;
+        int stepCounter = 1;
+        int nodeCounter = this.len();
+
+        while (nodeCounter != 1) {
+            if (stepCounter == step) {
+                this.remove(current.data);
+                previous.next = current.next;
+            }
+            previous = current;
+            current = current.next;
+            nodeCounter --;
+            stepCounter = 1;
+        }
+
+        return current.data;
+
+    }
+
 }
