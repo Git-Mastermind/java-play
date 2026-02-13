@@ -1,64 +1,62 @@
 package com.datastructures;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class LinkedList<T> {
     Node<T> head = null;
     
-    Node<Integer> int_head = null;
+    Node<Integer> intHead = null;
 
     public void append(T data) {
-        Node<T> new_node = new Node<>(data);
+        Node<T> newNode = new Node<>(data);
         if (this.head == null) {
-            this.head = new_node;
+            this.head = newNode;
             return;
         }
-        Node<T> last_node = this.head;
-        while (last_node.next != null) {
-            last_node = last_node.next;
+        Node<T> lastNode = this.head;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
         }
-        last_node.next = new_node;
+        lastNode.next = newNode;
     }
 
-    public void append_int(Integer data) {
+    public void appendInt(Integer data) {
         Node<Integer> new_node = new Node<>(data);
-        if (this.int_head == null) {
-            this.int_head = new_node;
+        if (this.intHead == null) {
+            this.intHead = new_node;
             return;
         }
-        Node<Integer> last_node = this.int_head;
+        Node<Integer> last_node = this.intHead;
         while (last_node.next != null) {
             last_node = last_node.next;
         }
         last_node.next = new_node;
     }
 
-    public void print_list() {
+    public void printList() {
         ArrayList<T> nodes = new ArrayList<T>();
-        Node<T> last_node = this.head;
-        String formatted_statement = "";
+        Node<T> lastNode = this.head;
+        String formattedStatement = "";
         
-        while (last_node != null) {
-            nodes.add(last_node.data());
-            last_node = last_node.next;
+        while (lastNode != null) {
+            nodes.add(lastNode.data());
+            lastNode = lastNode.next;
         }
         for (int i = 0; i < nodes.size(); i++) {
             if (i == 0) {
-                formatted_statement = formatted_statement.concat(String.valueOf(nodes.get(i)));
-                formatted_statement = formatted_statement.concat(" ");
+                formattedStatement = formattedStatement.concat(String.valueOf(nodes.get(i)));
+                formattedStatement = formattedStatement.concat(" ");
             }
             else {
-                formatted_statement = formatted_statement.concat("---> ");
-                formatted_statement = formatted_statement.concat(String.valueOf(nodes.get(i)));
+                formattedStatement = formattedStatement.concat("---> ");
+                formattedStatement = formattedStatement.concat(String.valueOf(nodes.get(i)));
             }
             i++;
         }
-        System.out.println(formatted_statement);
+        System.out.println(formattedStatement);
     }
 
-    public void print_list_noformat() {
+    public void printListNoformat() {
         ArrayList<T> nodes = new ArrayList<>();
         Node<T> current = this.head;
 
@@ -70,116 +68,116 @@ public class LinkedList<T> {
     }
 
     public void prepend(T data) {
-        Node<T> new_node = new Node<>(data);
-        new_node.next = this.head;
-        this.head = new_node;
+        Node<T> newNode = new Node<>(data);
+        newNode.next = this.head;
+        this.head = newNode;
     }
 
-    public void insert_after(Node<T> prev_node, T data) {
-        if (prev_node == null) {
+    public void insertAfter(Node<T> prevNode, T data) {
+        if (prevNode == null) {
             System.out.println("Node cannot be null");
             return;
         }
         else {
-            Node<T> new_node = new Node<>(data);
-            new_node.next = prev_node.next;
-            prev_node.next = new_node;
+            Node<T> newNode = new Node<>(data);
+            newNode.next = prevNode.next;
+            prevNode.next = newNode;
         }
     }
 
-    public void delete_node(T node_to_delete) {
-        Node<T> current_node = this.head;
-        Node<T> prev_node = null;
-        if (node_to_delete == null) {
+    public void delete_node(T nodeToDelete) {
+        Node<T> currentNode = this.head;
+        Node<T> prevNode = null;
+        if (nodeToDelete == null) {
             System.out.println("Node provided to delete does not exist");
             return;
         }
         else {
-            if (current_node.data.equals(node_to_delete)) {
-                this.head = current_node.next;
+            if (currentNode.data.equals(nodeToDelete)) {
+                this.head = currentNode.next;
             }
             else {
-                while (current_node != null && !current_node.data.equals(node_to_delete)) {
-                    prev_node = current_node;
-                    current_node = current_node.next;
+                while (currentNode != null && !currentNode.data.equals(nodeToDelete)) {
+                    prevNode = currentNode;
+                    currentNode = currentNode.next;
                 }
-                if (current_node == null) {
+                if (currentNode == null) {
                     return;
                 }
-                prev_node.next = current_node.next;
+                prevNode.next = currentNode.next;
 
             }
         }
         
     }
 
-    public void delete_node_by_pos(int pos) {
-        Node<T> current_node = this.head;
-        Node<T> prev_node = null;
+    public void deleteNodeByPos(int pos) {
+        Node<T> currentNode = this.head;
+        Node<T> prevNode = null;
         int index = 0;
         if (pos == 0) {
-            this.head = current_node.next;
+            this.head = currentNode.next;
         } 
         else {
-            while (current_node != null && index < pos) {
-                prev_node = current_node;
-                current_node = current_node.next;
+            while (currentNode != null && index < pos) {
+                prevNode = currentNode;
+                currentNode = currentNode.next;
                 index += 1;
             }
-            prev_node.next = current_node.next;
+            prevNode.next = currentNode.next;
         }
     }
 
-    public int len_iter() {
-        Node<T> current_node = this.head;
+    public int lenIter() {
+        Node<T> currentNode = this.head;
         int counter = 1;
 
-        while (current_node != null) {
+        while (currentNode != null) {
             counter += 1;
-            current_node = current_node.next;
+            currentNode = currentNode.next;
         }
 
         return counter;
     }
 
-    public int len_recur(Node<T> node) {
+    public int lenRecur(Node<T> node) {
         if (node.next == null) {
             return 1;
         }
         else {
-            return 1 + this.len_recur(node.next);
+            return 1 + this.lenRecur(node.next);
         }
     }
 
-    public void swap_node(T first_node, T second_node) {
-        Node<T> curr_1 = this.head;
-        Node<T> curr_2 = this.head;
-        Node<T> prev_node_1 = null;
-        Node<T> prev_node_2 = null;
-        if (first_node == second_node) {
+    public void swapNode(T firstNode, T secondNode) {
+        Node<T> curr1 = this.head;
+        Node<T> curr2 = this.head;
+        Node<T> prevNode1 = null;
+        Node<T> prevNode2 = null;
+        if (firstNode == secondNode) {
             return;
         }
-        while (curr_1 != null && curr_1 != first_node) {
-            prev_node_1 = curr_1;
-            curr_1 = curr_1.next;
+        while (curr1 != null && curr1 != firstNode) {
+            prevNode1 = curr1;
+            curr1 = curr1.next;
         }
         
-        while (curr_2 != null && curr_2 != second_node) {
-            prev_node_2 = curr_2;
-            curr_2 = curr_2.next;
+        while (curr2 != null && curr2 != secondNode) {
+            prevNode2 = curr2;
+            curr2 = curr2.next;
         }
 
-        if (prev_node_1 != null) {
-            prev_node_1 = curr_2;
+        if (prevNode1 != null) {
+            prevNode1 = curr2;
         }
         else {
-            curr_1 = this.head;
+            curr1 = this.head;
         }
-        if (prev_node_2 != null) {
-            prev_node_2 = curr_1;
+        if (prevNode2 != null) {
+            prevNode2 = curr1;
         }
         else {
-            curr_2 = this.head;
+            curr2 = this.head;
         }
 
     }
@@ -199,28 +197,28 @@ public class LinkedList<T> {
         this.head = prev;
     }
 
-    public Node<Integer> merge_sorted(Node<Integer> llist) {
-        Node<Integer> p = this.int_head;
+    public Node<Integer> mergeSorted(Node<Integer> llist) {
+        Node<Integer> p = this.intHead;
         Node<Integer> q = llist;
         Node<Integer> s = null;
-        Node<Integer> new_head = null;
+        Node<Integer> newHead = null;
 
         if (p != null && q != null) {
             if (p.data == q.data) {
                 s = p;
-                new_head = p;
+                newHead = p;
                 p = s.next;
                 
             }
             else if (p.data < q.data) {
                 s = p;
-                new_head = s;
+                newHead = s;
                 p = s.next;
                 
             }
             else if (p.data > q.data) {
                 s = q;
-                new_head = s;
+                newHead = s;
                 q = s.next;
                 
             }
@@ -243,21 +241,21 @@ public class LinkedList<T> {
             }
             
         }
-        return new_head;
+        return newHead;
         
     }
 
-    public void de_dupe() {
-        ArrayList<T> unique_elements = new ArrayList<>();
+    public void deDupe() {
+        ArrayList<T> uniqueElements = new ArrayList<>();
         Node<T> current = this.head;
         Node<T> prev = null;
 
         while (current != null) {
-            if (unique_elements.contains(current.data)) {
+            if (uniqueElements.contains(current.data)) {
                 prev.next = current.next;
             }
             else {
-                unique_elements.add(current.data);
+                uniqueElements.add(current.data);
             }
             prev = current;
             current = current.next;
@@ -265,9 +263,9 @@ public class LinkedList<T> {
 
     }
 
-    public T nth_from_last(int n) {
+    public T nthFromLast(int n) {
         Node<T> current = this.head;
-        int index = this.len_iter() - n;
+        int index = this.lenIter() - n;
         int counter = 1;
 
         while (counter != index) {
@@ -279,7 +277,7 @@ public class LinkedList<T> {
 
     }
 
-    public int count_occurences(T input_data) {
+    public int countOccurences(T input_data) {
         Node<T> current = this.head;
         int counter = 0;
 
@@ -292,11 +290,11 @@ public class LinkedList<T> {
         return counter;
     }
 
-    public boolean is_palindrome(Node<T> llist1, Node<T> llist2) {
+    public boolean isPalindrome(Node<T> llist1, Node<T> llist2) {
         ArrayList<T> llist1_values = new ArrayList<>();
         ArrayList<T> llist2_values = new ArrayList<>();
         Node<T> current = llist1;
-        boolean is_palindrome = false;
+        boolean isPalindrome = false;
 
 
         while (current != null) {
@@ -311,24 +309,24 @@ public class LinkedList<T> {
         }
 
         if (llist1_values.equals(llist2_values)) {
-            is_palindrome = true;
+            isPalindrome = true;
         }
         
-        return is_palindrome;
+        return isPalindrome;
     }
 
-    public void tail_to_head() {
+    public void tailToHead() {
         Node<T> head = this.head;
         Node<T> current = this.head;
         Node<T> prev = null;
-        Node<T> second_to_last = null;
+        Node<T> secondToLast = null;
 
         while (current.next.next != null) {
-            second_to_last = current;
+            secondToLast = current;
             prev = current.next;
             current = current.next.next;
         }
         prev.next = head.next;
-        second_to_last.next = null; 
+        secondToLast.next = null; 
     }
 }
