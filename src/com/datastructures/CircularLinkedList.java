@@ -74,4 +74,27 @@ public class CircularLinkedList<T> {
         return counter;
     }
 
+    public void splitList() {
+        Node<T> current = this.head;
+        Node<T> previous = null;
+        int counter = 0;
+
+        while (current != null && counter < (this.len() / 2)) {
+            previous  = current;
+            current = current.next;
+            counter ++;
+        }
+        previous.next = this.head;
+
+        CircularLinkedList<T> second_llist = new CircularLinkedList<>();
+        
+        while (current.next != this.head) {
+            second_llist.append(current.data);
+            current = current.next;
+        }
+        second_llist.append(current.data);
+        this.printList();
+        second_llist.printList();
+    }
+
 }

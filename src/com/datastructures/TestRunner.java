@@ -11,6 +11,6 @@ public class TestRunner {
         linkedList.append("D");
         
 
-        System.out.println(linkedList.len());
+        linkedList.splitList();
     }
 }
