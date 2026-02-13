@@ -63,10 +63,10 @@ public class LinkedList<T> {
         Node<T> current = this.head;
 
         while (current != null) {
-            System.out.println(current.data);
+            nodes.add(current.data);
             current = current.next;
         }
-        // System.out.println(nodes);
+        System.out.println(nodes);
     }
 
     public void prepend(T data) {
