@@ -17,14 +17,26 @@ public class DoublyLinkedList<T> {
 
 
     public void append(T data) {
-        Node<T> current = this.head;
         Node<T> newNode = new Node<>(data);
 
-        while (current.next != null) {
-            current = current.next;
+        if (this.head == null) {
+            this.head = newNode;
+            newNode.next = null;
+            newNode.prev = null;
+            return;
         }
-        newNode.next = null;
-        newNode.prev = current;
+        else {
+            Node<T> current = this.head;
+            while (current.next != null) {
+            current = current.next;
+            }
+            newNode.next = null;
+            newNode.prev = current;
+            current.next = newNode;
+
+        }
+
+        
 
     }
 }
