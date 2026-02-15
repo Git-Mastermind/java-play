@@ -9,8 +9,5 @@ public class Node<T> {
         this.data = data;
     }
 
-    public T data() {
-        return data;
-    }
 
 }

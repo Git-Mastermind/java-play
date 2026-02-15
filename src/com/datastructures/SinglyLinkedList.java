@@ -39,7 +39,7 @@ public class SinglyLinkedList<T> {
         String formattedStatement = "";
         
         while (lastNode != null) {
-            nodes.add(lastNode.data());
+            nodes.add(lastNode.data);
             lastNode = lastNode.next;
         }
         for (int i = 0; i < nodes.size(); i++) {
