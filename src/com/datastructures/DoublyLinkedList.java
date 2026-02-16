@@ -61,4 +61,23 @@ public class DoublyLinkedList<T> {
         newNode.prev = insert_after;
         insert_after.next = newNode;
     }
+    public void insertBefore(T data, Node<T> afterNode) {
+        Node<T> current = this.head;
+        Node<T> newNode = new Node<>(data);
+
+        if (afterNode == this.head) {
+            newNode.prev = null;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+
+        while (current.next != afterNode) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        newNode.prev = current;
+        current.next = newNode;
+        current = current.next.next;
+        current.prev = newNode;  
+    }
 }

@@ -8,11 +8,11 @@ public class TestRunner {
 
         linkedList.append("A");
         linkedList.append("B");
-
+        
         linkedList.append("D");
         
 
-        linkedList.insertAfter("C", );
+        
         
     }
 }
