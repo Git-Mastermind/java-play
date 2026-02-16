@@ -9,6 +9,7 @@ public class TestRunner {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
+        linkedList.prepend("H");
 
         linkedList.printList();
         

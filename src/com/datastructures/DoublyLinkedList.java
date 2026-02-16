@@ -41,7 +41,12 @@ public class DoublyLinkedList<T> {
 
         }
 
-        
+    }
 
+    public void prepend(T data) {
+        Node<T> newNode = new Node<>(data);
+        newNode.next = this.head;
+        newNode.prev = null;
+        this.head = newNode;
     }
 }
