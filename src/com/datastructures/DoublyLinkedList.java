@@ -121,8 +121,9 @@ public class DoublyLinkedList<T> {
             else {
                 uniqueElements.add(current.data);
             }
+            current = current.next;
         }
-        
+
     }
 
     public int len() {
