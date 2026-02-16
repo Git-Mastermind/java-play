@@ -6,12 +6,17 @@ public class DoublyLinkedList<T> {
     public void printList() {
         Node<T> current = this.head;
         String formatted = "";
-
-        while (current.next != this.head) {
+        formatted = formatted.concat(" NULL <--- " + current.data + "---> ");
+        if (current.next == null) {
+            return;
+        }
+        
+        current = current.next;
+        while (current.next != null) {
             formatted = formatted.concat("<---" + current.data + " ---> ");
             current = current.next;
         }
-        formatted = formatted.concat(current.data.toString() + " ---> NULL");
+        formatted = formatted.concat("<---" + current.data.toString() + " ---> NULL");
         System.out.println(formatted);
     }
 
