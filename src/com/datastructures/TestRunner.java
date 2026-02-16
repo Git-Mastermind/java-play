@@ -8,10 +8,11 @@ public class TestRunner {
 
         linkedList.append("A");
         linkedList.append("B");
+        linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
 
-        linkedList.deleteNode("C");
+        linkedList.deDupe();
         linkedList.printList();
         
     }

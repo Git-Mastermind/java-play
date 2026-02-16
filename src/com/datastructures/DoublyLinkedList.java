@@ -115,10 +115,14 @@ public class DoublyLinkedList<T> {
         List<T> uniqueElements = new ArrayList<>();
 
         while (current.next != null) {
-            if (!uniqueElements.contains(current.data)) {
-
+            if (uniqueElements.contains(current.data)) {
+                this.deleteNode(current.data);
+            }
+            else {
+                uniqueElements.add(current.data);
             }
         }
+        
     }
 
     public int len() {
