@@ -329,4 +329,19 @@ public class SinglyLinkedList<T> {
         prev.next = head.next;
         secondToLast.next = null; 
     }
+
+    public T halfTwoPointerMethod() {
+        Node<T> current = this.head;
+        Node<T> counter = this.head;
+
+        while (counter.next != null) {
+            counter = counter.next.next;
+            current = current.next;
+            if (counter == null) {
+                break;
+            }
+        }
+
+        return current.data;
+    }
 }
