@@ -136,4 +136,13 @@ public class DoublyLinkedList<T> {
 
         return counter;
     }
+    public void pairsWithSum(int sum) {
+        Node<T> current= this.head;
+        int nodeCount = 1;
+        int incrementCounter = 1;
+
+        while () {
+
+        }
+    } 
 }
