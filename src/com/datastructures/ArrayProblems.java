@@ -1,6 +1,7 @@
 package com.datastructures;
 import java.util.List;
 import java.lang.Math;
+import java.util.ArrayList;
 
 public class ArrayProblems {
     
@@ -20,6 +21,17 @@ public class ArrayProblems {
         }
         else {
             System.out.println("Unwinnible!");
+        }
+    }
+
+    public void arbitraryPrecisionIncrement(ArrayList<Integer> nums) {
+        nums.set(-1, nums.get(-1) + 1);
+
+        for (int i = -1; i != -1; i++) {
+            if (nums.get(i) == 9 || nums.get(i) == 10) {
+                nums.set(i, 0);
+                nums.set(i - 1, nums.get(i - 1) + 1);
+            }
         }
     }
 }
