@@ -24,11 +24,17 @@ public class ArrayProblems {
         }
     }
 
-    public void intersectionOfTwoSortedArrays(List<Integer> nums1, List<Integer> nums2) {
+    public int buySellStock(List<Integer> stockPrices) {
+        int maxProfit = 0;
+        int iterationCounter = 0;
         
+        for (int i = 0; i < stockPrices.size(); i++) {
+            for (int j = 0; j < stockPrices.size(); j++) {
+                if ((stockPrices.get(j) - stockPrices.get(i)) > maxProfit) {
+                    maxProfit = stockPrices.get(j) - stockPrices.get(i);
+                }
+            }
+        }
+        return maxProfit;
     }
-
-    
-
-    
 }

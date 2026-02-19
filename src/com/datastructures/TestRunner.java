@@ -6,10 +6,11 @@ import java.util.ArrayList;
 public class TestRunner {
     public static void main(String[] args) {
         ArrayProblems arrays = new ArrayProblems();
-        List<Integer> nums = new ArrayList<>(List.of(3,2,0,0,2,0,1));
+        List<Integer> nums = new ArrayList<>(List.of(310, 315, 275, 295, 260, 270, 290, 230, 255, 250));
         
+        System.out.println(arrays.buySellStock(nums));
 
-        arrays.arrayAdvanceGame(nums);
+        
         
         
     }
