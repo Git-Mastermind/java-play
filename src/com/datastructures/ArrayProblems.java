@@ -26,7 +26,6 @@ public class ArrayProblems {
 
     public int buySellStock(List<Integer> stockPrices) {
         int maxProfit = 0;
-        int iterationCounter = 0;
         
         for (int i = 0; i < stockPrices.size(); i++) {
             for (int j = 0; j < stockPrices.size(); j++) {
