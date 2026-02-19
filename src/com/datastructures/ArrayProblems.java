@@ -24,9 +24,11 @@ public class ArrayProblems {
         }
     }
 
-    public void shortestWorkTime(List<Integer> times) {
-        for (int i = 0; )
-    } 
+    public void intersectionOfTwoSortedArrays(List<Integer> nums1, List<Integer> nums2) {
+        
+    }
+
+    
 
     
 }
