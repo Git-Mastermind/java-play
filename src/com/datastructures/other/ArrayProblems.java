@@ -1,4 +1,4 @@
-package com.datastructures;
+package com.datastructures.other;
 import java.util.List;
 import java.lang.Math;
 // import java.util.ArrayList;
