@@ -1,4 +1,4 @@
-package com.datastructures.BinaryTrees;
+package com.datastructures.binaryTrees;
 
 public class Node<T> {
     T value;
