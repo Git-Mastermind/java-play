@@ -8,11 +8,11 @@ public class Queue<T> {
 
 
     public T peek() {
-        return queue.getLast();
+        return queue.getFirst();
     }
 
     public T front() {
-        return queue.getLast();
+        return queue.getFirst();
     }
 
     public boolean isEmpty() {
@@ -25,7 +25,13 @@ public class Queue<T> {
     }
 
     public void enqueue(T data) {
-        queue.addFirst(data);
+        queue.addLast(data);
+    }
+
+    public T dequeue() {
+        T firstElement = queue.getFirst();
+        queue.remove(queue.indexOf(queue.getFirst()));
+        return firstElement;
     }
 
     public int size() {
@@ -36,13 +42,17 @@ public class Queue<T> {
         return queue.size();
     }
 
-    public void view() {
+    public void printQueueFormatted() {
         String formatted = "";
 
         for (int i = 0; i < queue.size(); i++) {
-            formatted.concat(queue.get(i).toString() + "-->");
+            formatted = formatted.concat(queue.get(i) + "-->");
         }
         System.out.println(formatted);
+    }
+
+    public void viewQueue() {
+        System.out.println(queue);
     }
 
 }

@@ -7,6 +7,8 @@ public class OtherTest {
         queue.enqueue("B");
         queue.enqueue("C");
         queue.enqueue("D");
-        queue.view();
+        queue.printQueueFormatted();
+        queue.dequeue();
+        queue.printQueueFormatted();
     }
 }
