@@ -1,22 +1,23 @@
 package com.datastructures.other;
 import java.util.List;
 import java.util.ArrayList;
-
+import com.datastructures.binaryTrees.Node;
 
 public class Queue<T> {
-    List<T> queue = new ArrayList<>();
+    List<T> queueValues = new ArrayList<>();
+    List<Node<T>> queueNodes = new ArrayList<>();
 
 
     public T peek() {
-        return queue.getFirst();
+        return queueValues.getFirst();
     }
 
     public T front() {
-        return queue.getFirst();
+        return queueValues.getFirst();
     }
 
     public boolean isEmpty() {
-        if (queue.size() == 0) {
+        if (queueValues.size() == 0) {
             return true;
         }
         else {
@@ -25,34 +26,38 @@ public class Queue<T> {
     }
 
     public void enqueue(T data) {
-        queue.addLast(data);
+        queueValues.addLast(data);
     }
 
+    public void enqueueNode(Node<T> node) {
+        queueNodes.addLast(node);
+    } 
+
     public T dequeue() {
-        T firstElement = queue.getFirst();
-        queue.remove(queue.indexOf(queue.getFirst()));
+        T firstElement = queueValues.getFirst();
+        queueValues.remove(queueValues.indexOf(queueValues.getFirst()));
         return firstElement;
     }
 
     public int size() {
-        return queue.size();
+        return queueValues.size();
     }
 
     public int __len__() {
-        return queue.size();
+        return queueValues.size();
     }
 
     public void printQueueFormatted() {
         String formatted = "";
 
-        for (int i = 0; i < queue.size(); i++) {
-            formatted = formatted.concat(queue.get(i) + "-->");
+        for (int i = 0; i < queueValues.size(); i++) {
+            formatted = formatted.concat(queueValues.get(i) + "-->");
         }
         System.out.println(formatted);
     }
 
     public void viewQueue() {
-        System.out.println(queue);
+        System.out.println(queueValues);
     }
 
 }

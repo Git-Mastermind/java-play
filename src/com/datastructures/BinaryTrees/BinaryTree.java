@@ -18,7 +18,8 @@ public class BinaryTree<T> {
 
     public void levelOrderHelper(Node<T> start) {
         Queue<T> queue = new Queue<>();
-
+        String traversalData = "";
+        queue.enqueue(start);
         while (queue.size() > 0) {
             
         }
