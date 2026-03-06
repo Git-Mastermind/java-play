@@ -12,18 +12,15 @@ public class BinaryTree<T> {
         this.root = null;
     }
 
-    public void levelOrderTraversal(T data) {
-        
+    public void levelOrderTraversal(T start) {
+        Node<T> startNode = new Node<>(start);
+        levelOrderTraversalHelper(startNode);
     }
 
-    public void levelOrderHelper(Node<T> start) {
-        Queue<T> queue = new Queue<>();
-        String traversalData = "";
-        queue.enqueue(start);
-        while (queue.size() > 0) {
-            
-        }
+    public void levelOrderTraversalHelper(Node<T> start) {
+        
     }
+    
 
     
 
