@@ -5,22 +5,24 @@ import com.datastructures.other.Queue;
 
 
 
-public class BinaryTree<T> {
-    Node<T> root;
+public class BinaryTree {
+    Node<Integer> root;
     
     public BinaryTree() {
         this.root = null;
     }
 
-    public void preOrder(T data) {
+    public void search(int value) {
+        int root = this.root.value;
 
+        if (root > value) {
+
+        }
     }
-
-    public void preOrderHelper(Nod)
     
 
     
 
     
 }
-}
+

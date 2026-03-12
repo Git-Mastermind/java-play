@@ -1,11 +1,11 @@
 package com.datastructures.binaryTrees;
 
-public class Node<T> {
-    T value;
-    Node<T> left;
-    Node<T> right;
+public class Node {
+    int value;
+    Node left;
+    Node right;
 
-    public Node(T value) {
+    public Node(int value) {
         this.value = value;
     }
 
