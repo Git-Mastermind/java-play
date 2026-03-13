@@ -5,7 +5,7 @@ import com.datastructures.binaryTrees.Node;
 
 public class Queue<T> {
     List<T> queueValues = new ArrayList<>();
-    List<Node<T>> queueNodes = new ArrayList<>();
+    List<Node> queueNodes = new ArrayList<>();
 
 
     public T peek() {
@@ -29,7 +29,7 @@ public class Queue<T> {
         queueValues.addLast(data);
     }
 
-    public void enqueueNode(Node<T> node) {
+    public void enqueueNode(Node node) {
         queueNodes.addLast(node);
     } 
 
