@@ -12,20 +12,16 @@ public class BinaryTree {
         this.root = null;
     }
 
-    public void search(int value) {
-        Node root = this.root;
-        int counter = 0;
+    public void preOrder(int data) {
+        Node node = new Node(data);
+        preOrderHelper(node);
+    }
 
-        if (root.value > value) {
-            root = root.left;
-            counter ++;
-        }
-        else {
-            root = root.right;
-            counter ++;
-        }
-        System.out.println(counter);
-        System.out.println(root.value);
+    public void preOrderHelper(Node node) {
+        if (node == null) return;
+        System.out.println(node.value + " ");
+        preOrderHelper(node.left);
+        preOrderHelper(node.right);
     }
     
 
