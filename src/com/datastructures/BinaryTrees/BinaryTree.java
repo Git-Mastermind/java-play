@@ -29,6 +29,15 @@ public class BinaryTree {
         return traversalNotebook;
         
     }
+
+    public void inOrder(int data) {
+        Node node = new Node(data);
+        inOrderHelper(node);
+    }
+
+    public void inOrderHelper(Node node) {
+        
+    }
     
 
     
