@@ -12,16 +12,22 @@ public class BinaryTree {
         this.root = null;
     }
 
-    public void preOrder(int data) {
+    public String preOrder(int data) {
         Node node = new Node(data);
-        preOrderHelper(node);
+        String traversalNotebook = "";
+        String traversalRecord = preOrderHelper(node, traversalNotebook);
+        return traversalRecord;
     }
 
-    public void preOrderHelper(Node node) {
-        if (node == null) return;
-        System.out.println(node.value + " ");
-        preOrderHelper(node.left);
-        preOrderHelper(node.right);
+    public String preOrderHelper(Node node, String traversalNotebook) {
+        if (node == null) {
+            return traversalNotebook;
+        }
+        traversalNotebook = traversalNotebook.concat(Integer.toString(node.value));
+        traversalNotebook = preOrderHelper(node.left, traversalNotebook);
+        traversalNotebook = preOrderHelper(node.right, traversalNotebook);
+        return traversalNotebook;
+        
     }
     
 
