@@ -38,4 +38,30 @@ public class SinglyLinkedListReview<T> {
         newNode.next = this.head;
         this.head = newNode;
     }
+
+    public void insertAfter(T data, T insertAfter) {
+        Node<T> current = this.head;
+
+        while (current.next != null) {
+            if (current.data == insertAfter) {
+                break;
+            }
+            current = current.next;
+        }
+        if (current != insertAfter) {
+            System.out.println("Node to insert after not found in linked list");
+            return;
+        }
+
+        Node<T> newNode = new Node<>(data);
+
+        current = this.head;
+
+        while (current.data != insertAfter) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+        
+    }
 }
