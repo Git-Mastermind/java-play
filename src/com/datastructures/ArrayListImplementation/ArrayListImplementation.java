@@ -7,12 +7,21 @@ public class ArrayListImplementation {
     public void delete(String valueToErase) {
         String[] newArray = new String[array.length - 1];
 
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] != valueToErase) {
+        for (int i = 0; i < newArray.length; i++) {
+
+            if (array[i] == valueToErase) {
+                newArray[i] = array[i + 1];
+                
+                
+            }
+            else {
                 newArray[i] = array[i];
             }
             
+            
         }
+
+        
         turnArrayToStringRepresentation(newArray);
     }
 
