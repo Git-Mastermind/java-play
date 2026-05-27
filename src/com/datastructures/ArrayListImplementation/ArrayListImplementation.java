@@ -5,20 +5,16 @@ public class ArrayListImplementation {
     String[] array = {"a", "b", "c", "d", "e"};
 
     public void delete(String valueToErase) {
-        String[] newArray = new String[array.length - 1];
+        String[] newArray = new String[array.length];
 
         for (int i = 0; i < newArray.length; i++) {
-
             if (array[i] == valueToErase) {
-                newArray[i] = array[i + 1];
-                
-                
+                 newArray[i] = array[i + 1];
+                 i++;
             }
             else {
                 newArray[i] = array[i];
             }
-            
-            
         }
 
         
