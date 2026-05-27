@@ -7,6 +7,7 @@ public class SinglyLinkedListReviewTest {
         linkedList.append("b");
         linkedList.append("c");
         linkedList.append("d");
+        linkedList.prepend("e");
         linkedList.printList();
     }
 }

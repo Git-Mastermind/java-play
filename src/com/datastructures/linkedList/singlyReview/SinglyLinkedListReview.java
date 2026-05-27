@@ -32,4 +32,10 @@ public class SinglyLinkedListReview<T> {
         list = list.concat("null");
         System.out.println(list);
     }
+
+    public void prepend(T data) {
+        Node<T> newNode = new Node<>(data);
+        newNode.next = this.head;
+        this.head = newNode;
+    }
 }
