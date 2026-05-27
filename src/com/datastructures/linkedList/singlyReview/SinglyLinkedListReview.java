@@ -2,15 +2,10 @@ package com.datastructures.linkedList.singlyReview;
 import java.util.ArrayList;
 
 public class SinglyLinkedListReview<T> {
-    Node<T> head;
-
-    public SinglyLinkedListReview(T data) {
-        this.head.data = data;
-        this.head.next = null;
-    }
+    Node<T> head = null;
 
     public void append(T data) {
-        Node<T> newNode = new Node<T>(data);
+        Node<T> newNode = new Node<>(data);
         newNode.next = null;
 
         if (this.head == null) {
@@ -29,8 +24,10 @@ public class SinglyLinkedListReview<T> {
         String list = "";
         Node<T> current = this.head;
 
-        while (current.next != null) {
+        while (current != null) {
             list = list.concat(current.data.toString());
+            list = list.concat(" ----> ");
+            current = current.next;
         }
         list = list.concat("null");
         System.out.println(list);
