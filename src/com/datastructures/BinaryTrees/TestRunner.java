@@ -1,4 +1,4 @@
-package com.datastructures.binaryTrees;
+package com.datastructures.BinaryTrees;
 
 
 

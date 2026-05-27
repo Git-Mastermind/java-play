@@ -1,4 +1,4 @@
-package com.datastructures.binaryTrees;
+package com.datastructures.BinaryTrees;
 // import java.util.List;
 // import java.util.ArrayList;
 import com.datastructures.other.Queue;
