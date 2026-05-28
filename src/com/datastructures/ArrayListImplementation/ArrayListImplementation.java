@@ -23,10 +23,6 @@ public class ArrayListImplementation {
                     newArray[i] = array[i];
                 }
             }
-            
-            
-
-
         }
         
         turnArrayToStringRepresentation(newArray);
@@ -35,6 +31,23 @@ public class ArrayListImplementation {
     public void turnArrayToStringRepresentation(String[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
+        }
+    }
+
+    public boolean isEmpty() {
+        int length = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                length++;
+            }
+        }
+
+        if (length == 0) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
     
