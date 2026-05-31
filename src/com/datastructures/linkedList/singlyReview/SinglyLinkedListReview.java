@@ -2,7 +2,7 @@ package com.datastructures.linkedList.singlyReview;
 import java.util.ArrayList;
 
 public class SinglyLinkedListReview<T> {
-    Node<T> head = null;
+    private Node<T> head = null;
 
     public void append(T data) {
         Node<T> newNode = new Node<>(data);
