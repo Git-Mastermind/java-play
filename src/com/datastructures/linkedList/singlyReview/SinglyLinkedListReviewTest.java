@@ -7,7 +7,8 @@ public class SinglyLinkedListReviewTest {
         linkedList.append("b");
         linkedList.append("c");
         linkedList.append("d");
-        linkedList.insertAfter("e", "g");
+        linkedList.append("e");
+        linkedList.swap("a", "e");
         linkedList.printList();
     }
 }
