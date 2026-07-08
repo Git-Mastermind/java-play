@@ -1,4 +1,4 @@
-package com.datastructures.JavaBookExercises.AnimalFarm;
+package com.datastructures.JavaBookExercises.InheritancePractice.AnimalFarm;
 
 public abstract class Feline extends Animal {
     @Override
