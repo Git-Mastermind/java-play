@@ -12,5 +12,7 @@ public class Welcome {
         System.out.println("Hello");
         // print ln with line change, so double line change
         System.out.println("\n Yooooo");
+        // comments explain the why not the what, so the comments above are bad comments
+        
     }
 }
