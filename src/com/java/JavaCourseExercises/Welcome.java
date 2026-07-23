@@ -7,9 +7,9 @@ public class Welcome {
         int num = (int) floatNumber;
         System.out.println(num);
 
-        boolean isSevenGreatorThanFive = 7 > 5; 
+        boolean isSevenGreatorThanFive = 7 > 5; // boolean result of 7 < 5 is assigned to variable isSevenGreatorThanFive
 
-        System.out.println(isSevenGreatorThanFive)l
+        System.out.println(isSevenGreatorThanFive);
         
     }
 }
