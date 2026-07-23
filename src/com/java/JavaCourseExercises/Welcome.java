@@ -6,6 +6,10 @@ public class Welcome {
         System.out.println(floatNumber);
         int num = (int) floatNumber;
         System.out.println(num);
+
+        boolean isSevenGreatorThanFive = 7 > 5; 
+
+        System.out.println(isSevenGreatorThanFive)l
         
     }
 }
