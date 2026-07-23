@@ -1,4 +1,4 @@
-package com.java.JavaCourseExercises;
+package com.java.JavaCourseExercises.Casting;
 
 public class NarrowingCasting {
     public static void main(String[] args) {
