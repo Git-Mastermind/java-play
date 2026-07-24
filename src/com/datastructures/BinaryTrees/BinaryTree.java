@@ -1,47 +1,28 @@
 package com.datastructures.BinaryTrees;
-// import java.util.List;
-// import java.util.ArrayList;
-import com.datastructures.other.Queue;
-
-
 
 public class BinaryTree {
     Node root;
-    
-    public BinaryTree() {
-        this.root = null;
+
+    public BinaryTree(Node root) {
+        this.root = root;
     }
 
-    public String preOrder(int data) {
-        Node node = new Node(data);
-        String traversalNotebook = "";
-        String traversalRecord = preOrderHelper(node, traversalNotebook);
-        return traversalRecord;
+    public String preOrder(Node root, String traversal) {
+
+        traversal += String.valueOf(root.value) + "-";
+        traversal = this.preOrder(root.left, traversal);
+        traversal = this.preOrder(root.right, traversal);
+
+        return traversal;
     }
 
-    public String preOrderHelper(Node node, String traversalNotebook) {
-        if (node == null) {
-            return traversalNotebook;
-        }
-        traversalNotebook = traversalNotebook.concat(Integer.toString(node.value));
-        traversalNotebook = preOrderHelper(node.left, traversalNotebook);
-        traversalNotebook = preOrderHelper(node.right, traversalNotebook);
-        return traversalNotebook;
-        
+    public String postOrder(Node root, String traversal) {
+        traversal = this.preOrder(root.left, traversal);
+        traversal = this.preOrder(root.right, traversal);
+        traversal += String.valueOf(root.value);
+
+        return traversal;
     }
 
-    public void inOrder(int data) {
-        Node node = new Node(data);
-        inOrderHelper(node);
-    }
 
-    public void inOrderHelper(Node node) {
-        
-    }
-    
-
-    
-
-    
 }
-
