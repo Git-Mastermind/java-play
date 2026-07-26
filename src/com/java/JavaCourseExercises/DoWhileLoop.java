@@ -2,12 +2,11 @@ package com.java.JavaCourseExercises;
 
 public class DoWhileLoop {
     public static void main(String[] args) {
-        int i = 5;
-        do
-        {
-            System.out.println("Hi");
-            i++;
-        }
-        while (i <= 4);
+        int i = 8;
+
+        do {
+            System.out.println("If this prints, then do while works...");
+        } 
+        while (i <= 2);
     }
 }
