@@ -2,10 +2,10 @@ package com.java.JavaCourseExercises;
 
 public class Demo {
     public static void main(String[] args) {
-        Computer computer = new Computer();
+        Calculator calc = new Calculator();
 
-        String pen = computer.getMeAPen(11);
-        System.out.println(pen);
+        int result = calc.add(3,4);
+        System.out.println(result);
     }
 
 }
