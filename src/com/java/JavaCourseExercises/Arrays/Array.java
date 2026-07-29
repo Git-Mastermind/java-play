@@ -1,4 +1,4 @@
-package com.java.JavaCourseExercises;
+package com.java.JavaCourseExercises.Arrays;
 
 public class Array {
     public static void main(String[] args) {
