@@ -10,12 +10,12 @@ public class Demo {
         Student s2 = new Student();
         s2.studentId = 2;
         s2.name = "Eshan";
-        s2.marks = 90;
+        s2.marks = 97;
 
         Student s3 = new Student();
         s3.studentId = 3;
         s3.name = "Rohan";
-        s3.marks = 90;
+        s3.marks = 93;
 
         Student[] students = new Student[3];
         students[0] = s1;
@@ -23,7 +23,7 @@ public class Demo {
         students[2] = s3;
 
         for (int i = 0; i < students.length; i++) {
-            System.out.println(students[i].name);
+            System.out.println(students[i].name + " -- " + students[i].marks);
         }
         
     }
