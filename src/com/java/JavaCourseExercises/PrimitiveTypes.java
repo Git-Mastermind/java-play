@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class PrimitiveTypes {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int i = 1_925_347;
         short s = 558;
         long l = 90000000000L;

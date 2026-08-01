@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class Welcome {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         float floatNumber = 6.8f;
         System.out.println(floatNumber);
         int num = (int) floatNumber;

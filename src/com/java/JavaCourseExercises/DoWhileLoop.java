@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class DoWhileLoop {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int i = 8;
 
         do {

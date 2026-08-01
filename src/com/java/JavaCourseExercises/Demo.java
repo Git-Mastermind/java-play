@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class Demo {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         Student s1 = new Student();
         s1.studentId = 1;
         s1.name = "John";
@@ -22,8 +22,8 @@ public class Demo {
         students[1] = s2;
         students[2] = s3;
 
-        for (int i = 0; i < students.length; i++) {
-            System.out.println(students[i].name + " -- " + students[i].marks);
+        for (Student student : students) {
+            System.out.println(student.name + " -- " + student.marks);
         }
         
     }

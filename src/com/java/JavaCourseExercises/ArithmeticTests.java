@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class ArithmeticTests {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         byte num = 7;
 
         byte result = ++num; // first increment num then assign incremented num to result

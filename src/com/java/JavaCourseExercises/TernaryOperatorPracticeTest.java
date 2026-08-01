@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class TernaryOperatorPracticeTest {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         TernaryOperatorPractice ternaryOperator = new TernaryOperatorPractice();
 
         int age = 19;

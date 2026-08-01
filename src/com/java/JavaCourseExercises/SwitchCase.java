@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class SwitchCase {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int dayOfWeekInt = 8;
 
         switch(dayOfWeekInt) {

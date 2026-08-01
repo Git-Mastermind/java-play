@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class Conditionals {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int x = 9;
         int y = 9;
 

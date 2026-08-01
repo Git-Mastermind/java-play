@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class ForEachLoop {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int[] nums = new int[4];
         nums[0] = 4;
         nums[1] = 8;

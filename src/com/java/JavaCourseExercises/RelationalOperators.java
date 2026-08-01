@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class RelationalOperators {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int x = 8;
         int y = 9;
 

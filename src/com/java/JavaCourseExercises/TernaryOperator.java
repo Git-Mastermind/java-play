@@ -1,7 +1,7 @@
 package com.java.JavaCourseExercises;
 
 public class TernaryOperator {
-    public static void main(String[] args) {
+    public static void main(StringPractice[] args) {
         int num = 990200224;
 
         boolean result = num%2==0?true:false;
