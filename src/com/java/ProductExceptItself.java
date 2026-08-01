@@ -1,12 +1,8 @@
 package com.java;
+import java.util.Arrays;
 
 public class ProductExceptItself {
 
-    public void turnArrayIntoReadable(int[] inputArray) {
-        for (int i : inputArray) {
-            System.out.println(i);
-        }
-    }
     public void productExceptItself(int[] inputArray) {
         int product = 1;
         int[] resultList = new int[inputArray.length];
@@ -20,6 +16,6 @@ public class ProductExceptItself {
             resultList[i] = product;
             product = 1;
         }
-        this.turnArrayIntoReadable(resultList);
+        System.out.println(Arrays.toString(resultList));
     }
 }
