@@ -2,6 +2,6 @@ package com.java.JavaCourseExercises;
 
 public class Student {
     int studentId;
-    StringPractice name;
+    String name;
     int marks;
 }
