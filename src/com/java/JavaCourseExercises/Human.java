@@ -7,7 +7,10 @@ public class Human {
     public Human(String name, int age) {
         this.age = age;
         this.name = name;
+        System.out.print("in constructor");
     }
+
+
 
 
     public int age() {
