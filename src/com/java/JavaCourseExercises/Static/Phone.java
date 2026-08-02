@@ -7,5 +7,10 @@ public class Phone {
 
     static {
         name = "Phone";
+        System.out.println("in static");
+    }
+
+    public Phone() {
+        System.out.println("in contructor");
     }
 }
