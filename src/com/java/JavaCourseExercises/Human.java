@@ -3,12 +3,15 @@ package com.java.JavaCourseExercises;
 public class Human {
     private int age;
     private String name;
+    private int studentid;
 
-    public Human(String name, int age) {
+
+    public Human(int studentid, int age) {
+        this.studentid = studentid;
         this.age = age;
-        this.name = name;
-        System.out.print("in constructor");
     }
+
+
 
 
 
