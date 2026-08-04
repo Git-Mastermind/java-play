@@ -2,8 +2,10 @@ package com.java.JavaCourseExercises.MethodOverriding;
 
 public class Demo {
     public static void main(String[] args) {
-        B objB = new B();
+        A objB = new B();
         objB.show();
         objB.hello();
+        Object obj1 = new A();
+        
     }
 }
