@@ -1,9 +1,21 @@
 package com.java.JavaCourseExercises.Casting;
 
+class A {
+    public void showA() {
+        System.out.println("in A show");
+    }
+}
+
+class B extends A {
+    public void showB() {
+        System.out.println("in B show");
+    }
+}
+
+
 public class Downcasting {
     public static void main(String[] args) {
-        double d = 6;
-        int i = (int) d;
-        System.out.println(i);
+       B obj = (B) new A();
+        obj.showB();
     }
 }
