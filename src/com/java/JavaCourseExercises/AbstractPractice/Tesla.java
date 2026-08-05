@@ -1,6 +1,6 @@
 package com.java.JavaCourseExercises.AbstractPractice;
 
-public class Tesla extends CarAudioSpecialist {
+public abstract class Tesla extends CarAudioSpecialist {
     public void drive() {
         System.out.println("eeeeeeeee...");
     }
