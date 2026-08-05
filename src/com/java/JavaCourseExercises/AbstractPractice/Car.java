@@ -7,5 +7,5 @@ public abstract class Car {
 
     public abstract void playMusic();
 
-    public abstract void turn();
+    public abstract void turn(String direction);
 }
