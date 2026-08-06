@@ -1,15 +1,14 @@
 package com.java.JavaCourseExercises.InnerClasses;
 
-class Human {
-    int age;
-    String name;
+class A {
+    int num;
 
     public void hello() {
         System.out.println("hello");
     }
 
-    class Arm {
-        int numOfFingers;
+    static class B {
+        String name;
 
         public void config() {
             System.out.println("in config"); 
@@ -19,8 +18,13 @@ class Human {
 
 public class Demo {
     public static void main(String[] args) {
-        Human eshan = new Human();
-        eshan.hello();
+        A obj = new A();
+        obj.hello();
+
+        A.B obj1 = new A.B();
+        obj1.config();
+
+        
 
     }
 }
