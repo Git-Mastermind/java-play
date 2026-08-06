@@ -6,9 +6,14 @@ public class Demo {
             public void show() {
                 System.out.println("in implememted show");
             }
+
+            public void config() {
+                System.out.println("in implemented config");
+            }
         };
 
         obj.show();
+        obj.config();
     }; 
     }
     
