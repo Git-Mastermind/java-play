@@ -15,4 +15,12 @@ public class DeutscheBank {
     public int getBalance(Account account) {
         return account.getBalance();
     }
+
+    public void withdraw(Account account, int amount) {
+        account.updateBalance(-amount);
+    }
+
+    public void deposit(Account account, int amount) {
+        account.updateBalance(amount);
+    }
 }
