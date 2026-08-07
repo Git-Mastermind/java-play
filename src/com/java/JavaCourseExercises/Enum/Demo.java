@@ -1,4 +1,5 @@
 package com.java.JavaCourseExercises.Enum;
+import java.lang.Enum;
 
 enum Status {
     Running, Pending, Failed, Success;
