@@ -2,8 +2,10 @@ package com.java.BankSystem;
 
 public class Account {
     private int balance;
+    private Customer customer;
 
-    public Account(int balance) {
+    public Account(Customer customer, int balance) {
+        this.customer = customer;
         this.balance = balance;
     }
 

@@ -6,8 +6,8 @@ public class DeutscheBank {
         return customer;
     }
 
-    public Account newBankAccount(String name, int balance) {
-        Account account = new Account(balance);
+    public Account newBankAccount(Customer customer, int balance) {
+        Account account = new Account(customer, balance);
         return account;
     }
 
