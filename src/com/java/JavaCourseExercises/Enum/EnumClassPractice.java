@@ -7,12 +7,21 @@ public class EnumClassPractice {
             
             private int price;
 
+            private Macbook() {
+                this.price = 0;
+            }
+
             private Macbook(int price) {
                 this.price = price;
             }
+
+            public int getPrice() {
+                return price;
+            }
         }
 
-        Macbook macbook = Macbook.Air;
-        System.out.println(macbook.price);
+        for (Macbook macbook : Macbook.values()) {
+            System.out.println(macbook + " : " + "$" + macbook.price);
+        }
     }
 }
