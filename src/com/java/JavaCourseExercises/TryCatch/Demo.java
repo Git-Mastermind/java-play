@@ -1,26 +1,26 @@
 package com.java.JavaCourseExercises.TryCatch;
 
+
 public class Demo {
     public static void main(String[] args) {
-        int[] nums = {0,1,5,6,2};
+        int i = 20;
+        int j = 0;
+
         try {
-            System.out.println(nums[0]);
-            int num0 = nums[0];
-            int num5 = nums[5];
-            int result = num5/num0;
-            
+            j = 18/i;
+            if (i > 18) {
+                throw new ArithmeticException();
+            }
         }
 
-        catch(ArithmeticException error) {
-            System.out.println("cannot divide by zero");
-        }
-        catch (IndexOutOfBoundsException error) {
-            System.out.println("index out of bounds");
+        catch (ArithmeticException e) {
+            j = 18/1;
+            System.out.println("defalting...");
         }
         catch (Exception e) {
-            System.out.println("Something went wrong" + e);
+            System.out.println("Something went wrong...");
         }
-        
+        System.out.println(j);
 
     }
 }
