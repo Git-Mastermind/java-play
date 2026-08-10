@@ -1,26 +1,22 @@
 package com.java.JavaCourseExercises.TryCatch;
+import java.util.Scanner;
 
 
 public class Demo {
     public static void main(String[] args) {
-        int i = 20;
-        int j = 0;
+        int[] nums = {0,1,2,3,4,5};
+        Scanner scanner = new Scanner(System.in);
 
         try {
-            j = 18/i;
-            if (i > 18) {
-                throw new ArithmeticException();
+            System.out.print("index: ");
+            int index = scanner.nextInt();
+            if (index < 0) {
+                throw new IndexIsNegativeException("index is negative");
             }
         }
-
-        catch (ArithmeticException e) {
-            j = 18/1;
-            System.out.println("defalting...");
+        catch (IndexIsNegativeException e) {
+            System.out.println("index is negative" + e);
         }
-        catch (Exception e) {
-            System.out.println("Something went wrong...");
-        }
-        System.out.println(j);
 
     }
 }
