@@ -42,6 +42,7 @@ public class ThreadMorePractice {
         }
 
         System.out.println(c.count);
+        System.out.println();
         
         }
     }
