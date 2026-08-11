@@ -3,9 +3,10 @@ package com.java.JavaCourseExercises;
 class Counter {
     int count;
 
-    public void increment() {
+    public synchronized void increment() {
         count++;
     }
+    
 }
 
 public class ThreadMorePractice {
@@ -13,13 +14,13 @@ public class ThreadMorePractice {
         Counter c = new Counter();
 
         Runnable obj1 = () -> {
-            for (int i=0;i<=1000;i++) {
+            for (int i=0;i<=999;i++) {
                 c.increment();
             }
         };
 
         Runnable obj2 = () -> {
-            for (int i = 0; i<=1000; i++) {
+            for (int i = 0; i<=999; i++) {
                 c.increment();
             }
         };
