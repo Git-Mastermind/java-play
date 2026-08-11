@@ -18,7 +18,7 @@ class B {
     }
 }
 
-public class Thread {
+public class ThreadPractice {
     public static void main(String[] args) {
         A a = new A();
         B b = new B();
