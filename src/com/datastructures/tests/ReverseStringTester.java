@@ -1,4 +1,6 @@
-package com.datastructures.stack;
+package com.datastructures.tests;
+
+import com.datastructures.stack.ReverseString;
 
 public class ReverseStringTester {
     public static void main(String[] args) {

@@ -1,4 +1,6 @@
-package com.datastructures.stack;
+package com.datastructures.tests;
+
+import com.datastructures.stack.Stack;
 
 public class StackTester {
     public static void main(String[] args) {

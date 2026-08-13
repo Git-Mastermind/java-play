@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-class Stack<T> {
+public class Stack<T> {
     List<T> stack;
     public Stack() {
         stack = new ArrayList<>();
@@ -26,6 +26,10 @@ class Stack<T> {
 
     public boolean isEmpty() {
         return stack.size() == 0;
+    }
+
+    public int size() {
+        return stack.size();
     }
 
 
