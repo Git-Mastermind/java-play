@@ -1,5 +1,5 @@
-package com.datastructures.tests;
-import com.datastructures.stack.DecimalToBinary;
+package com.datastructures.tests.stacktests;
+import com.datastructures.other.DecimalToBinary;
 import com.datastructures.stack.Stack;
 
 public class DecimalToBinaryTester {

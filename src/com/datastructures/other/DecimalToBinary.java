@@ -1,4 +1,6 @@
-package com.datastructures.stack;
+package com.datastructures.other;
+
+import com.datastructures.stack.Stack;
 
 public class DecimalToBinary {
     Stack<Integer> stack = new Stack<>();

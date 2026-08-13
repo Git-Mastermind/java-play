@@ -3,11 +3,12 @@ package com.datastructures.linkedlist.singly;
 public class Node<T> {
     T data;
     Node<T> next;
-    Node<T> prev;
 
-    public Node(T data) {
+
+    public Node(T data, Node<T> next) {
         this.data = data;
+        this.next = next;
     }
 
-
+    
 }

@@ -1,4 +1,4 @@
-package com.datastructures.tests;
+package com.datastructures.tests.stacktests;
 
 import com.datastructures.stack.ReverseString;
 
