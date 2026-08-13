@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.inheritancepractice.AnimalFarm;
+package com.java.javabookexercises.inheritancepractice.AnimalFarm;
 
 public class Hippo extends Animal {
     @Override

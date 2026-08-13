@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.inheritancepractice;
+package com.java.javabookexercises.inheritancepractice;
 
 public abstract class SuperclassPractice {
     String name = "John Smith";

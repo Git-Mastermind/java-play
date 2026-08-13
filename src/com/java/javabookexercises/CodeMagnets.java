@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises;
+package com.java.javabookexercises;
 
 import java.util.ArrayList;
 

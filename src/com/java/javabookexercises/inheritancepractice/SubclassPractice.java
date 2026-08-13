@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.inheritancepractice;
+package com.java.javabookexercises.inheritancepractice;
 
 public class SubclassPractice extends SuperclassPractice {
 

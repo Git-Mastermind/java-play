@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.polymorphismpractice;
+package com.java.javabookexercises.polymorphismpractice;
 
 public class Dog extends Animal{
     public void eat() {

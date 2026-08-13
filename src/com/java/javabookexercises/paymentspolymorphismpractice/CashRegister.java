@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.paymentspolymorphismpractice;
+package com.java.javabookexercises.paymentspolymorphismpractice;
 
 public class CashRegister {
     public void swipeCard(int cardNumber) {
