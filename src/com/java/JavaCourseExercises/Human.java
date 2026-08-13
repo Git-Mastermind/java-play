@@ -5,7 +5,7 @@ public class Human {
     private String name;
     private int studentid;
 
-
+ 
     public Human(int studentid, int age) {
         this.studentid = studentid;
         this.age = age;

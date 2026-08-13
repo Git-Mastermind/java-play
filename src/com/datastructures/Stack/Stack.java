@@ -1,31 +1,32 @@
-package com.datastructures.Stack;
+package com.datastructures.stack;
 import java.util.List;
 import java.util.ArrayList;
-public class Stack<T> {
-    List<T> stack = new ArrayList<>();
 
-    public void push(T value) {
-        stack.add(value);
+
+class Stack<T> {
+    List<T> stack;
+    public Stack() {
+        stack = new ArrayList<>();
     }
 
-    public boolean isEmpty() {
-        return stack.size()==0?true:false;
-    }
-
-    public T peek() {
-        return stack.get(stack.size() - 1);
+    public void push(T element) {
+        stack.add(element);
     }
 
     public T pop() {
-        T valueToReturn = stack.get(stack.size() - 1);
-        stack.remove(stack.size() - 1);
-        return valueToReturn;
+        T topElement = stack.get(stack.size() - 1);
+        stack.remove(topElement);
+        return topElement;
     }
 
-    public int search(T valueToSearch) {
-        return stack.indexOf(valueToSearch) + 1;
+    public T peek() {
+        T topElement = stack.get(stack.size() - 1);
+        return topElement;
     }
-    
+
+    public boolean isEmpty() {
+        return stack.size() == 0;
+    }
 
 
 

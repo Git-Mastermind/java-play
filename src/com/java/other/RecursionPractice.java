@@ -1,4 +1,4 @@
-package com.java;
+package com.java.other;
 
 public class RecursionPractice {
     public int countdownRecursion(int n) {

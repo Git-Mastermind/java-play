@@ -1,4 +1,4 @@
-package com.datastructures.BinaryTrees;
+package com.datastructures.binarytrees;
 
 public class BinaryTree {
     Node root;

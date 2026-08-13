@@ -1,4 +1,4 @@
-package com.datastructures.ArrayListImplementation;
+package com.datastructures.arraylistimplementation;
 
 public class ArraysPractice {
 

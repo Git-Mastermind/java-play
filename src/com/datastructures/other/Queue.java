@@ -1,7 +1,9 @@
 package com.datastructures.other;
 import java.util.List;
+
+import com.datastructures.binarytrees.Node;
+
 import java.util.ArrayList;
-import com.datastructures.BinaryTrees.Node;
 
 public class Queue<T> {
     List<T> queueValues = new ArrayList<>();

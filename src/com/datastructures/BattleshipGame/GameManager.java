@@ -1,4 +1,4 @@
-package com.datastructures.BattleshipGame;
+package com.datastructures.battleshipgame;
 
 import java.util.List;
 import java.util.ArrayList;

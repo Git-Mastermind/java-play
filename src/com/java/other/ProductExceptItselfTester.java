@@ -1,4 +1,4 @@
-package com.java;
+package com.java.other;
 
 public class ProductExceptItselfTester {
     public static void main(String[] args) {

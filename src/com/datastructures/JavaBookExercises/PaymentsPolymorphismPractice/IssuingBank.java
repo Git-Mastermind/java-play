@@ -1,4 +1,4 @@
-package com.datastructures.JavaBookExercises.PaymentsPolymorphismPractice;
+package com.datastructures.javabookexercises.PaymentsPolymorphismPractice;
 
 public class IssuingBank {
     public void finalizePayment(int cardNumber) {
