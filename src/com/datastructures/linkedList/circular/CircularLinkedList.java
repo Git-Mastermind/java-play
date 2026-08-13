@@ -1,4 +1,4 @@
-package com.datastructures.linkedList.circular;
+package com.datastructures.linkedlist.circular;
 
 public class CircularLinkedList<T> {
     Node<T> head = null;

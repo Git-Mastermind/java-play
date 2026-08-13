@@ -1,4 +1,4 @@
-package com.datastructures.linkedList.doubly;
+package com.datastructures.linkedlist.doubly;
 
 public class Node<T> {
     T data;

@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.PaymentsPolymorphismPractice;
+package com.datastructures.javabookexercises.paymentspolymorphismpractice;
 
 public class Network {
     public void routeToBank(int cardNumber) {

@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.InheritancePractice.PaymentProcessor;
+package com.datastructures.javabookexercises.inheritancepractice.PaymentProcessor;
 
 public class CreditCardProcessor extends PaymentProcessor{
     int merchant_id = 0;

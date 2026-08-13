@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.PaymentsPolymorphismPractice;
+package com.datastructures.javabookexercises.paymentspolymorphismpractice;
 
 public class Merchant {
     public void main(String[] args) {

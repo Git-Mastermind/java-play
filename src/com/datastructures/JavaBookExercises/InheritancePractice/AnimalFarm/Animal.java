@@ -1,4 +1,4 @@
-package com.datastructures.javabookexercises.InheritancePractice.AnimalFarm;
+package com.datastructures.javabookexercises.inheritancepractice.AnimalFarm;
 
 public abstract class Animal {
     public abstract void makeNoise();

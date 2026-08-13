@@ -1,4 +1,4 @@
-package com.datastructures.linkedList.singlyReview;
+package com.datastructures.linkedlist.singlyReview;
 
 public class SinglyLinkedListReviewTest {
     public static void main(String[] args) {

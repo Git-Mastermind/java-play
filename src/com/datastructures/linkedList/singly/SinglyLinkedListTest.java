@@ -1,4 +1,4 @@
-package com.datastructures.linkedList.singly;
+package com.datastructures.linkedlist.singly;
 
 public class SinglyLinkedListTest {
     
