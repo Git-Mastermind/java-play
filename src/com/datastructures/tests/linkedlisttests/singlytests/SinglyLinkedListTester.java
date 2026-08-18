@@ -1,8 +1,5 @@
 package com.datastructures.tests.linkedlisttests.singlytests;
 import com.datastructures.linkedlist.singly.SinglyLinkedList;
-
-import javax.swing.SpringLayout;
-
 import com.datastructures.linkedlist.singly.Node;
 
 public class SinglyLinkedListTester {
@@ -12,6 +9,10 @@ public class SinglyLinkedListTester {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
+        Node<String> node = linkedList.get(1);
+        linkedList.delete(node);
         linkedList.formattedPrint();
+
+
     }
 }

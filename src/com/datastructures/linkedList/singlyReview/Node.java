@@ -1,4 +1,4 @@
-package com.datastructures.linkedlist.singlyReview;
+package com.datastructures.linkedlist.singlyreview;
 
 
 
