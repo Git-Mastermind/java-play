@@ -134,13 +134,18 @@ public class SinglyLinkedList<T> {
         Node<T> current2Next = current2.next;
         current1.next = current2.next;
         current2Next = current1Next;
+    }
 
-        
-        
-        
+    public void reverse() {
+        Node<T> previous = null;
+        Node<T> current = this.head;
 
-        
-
-        
+        while (current != null) {
+            Node<T> next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
     }
 }
