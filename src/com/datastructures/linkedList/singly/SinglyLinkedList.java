@@ -183,4 +183,18 @@ public class SinglyLinkedList<T> {
 
         return back;
     }
+
+    public int countOccurances(T value) {
+        Node<T> current = this.head;
+        int counter = 0;
+
+        while (current != null) {
+            if (current.data == value) {
+                counter++;
+            }
+            current = current.next;
+        }
+        return counter;
+
+    }
 }
