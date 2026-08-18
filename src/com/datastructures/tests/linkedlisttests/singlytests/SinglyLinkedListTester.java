@@ -9,8 +9,9 @@ public class SinglyLinkedListTester {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
-        // Node<String> node = linkedList.get(1);
-        linkedList.delete(1);
+        Node<String> nodeB = linkedList.get(1);
+        Node<String> nodeD = linkedList.get(3);
+        linkedList.swap(nodeB, nodeD);
         linkedList.formattedPrint();
 
 

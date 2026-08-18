@@ -108,6 +108,39 @@ public class SinglyLinkedList<T> {
             currentIndex++;
         }
         previous.next = current.next;
+    }
+
+   
+    public void swap(Node<T> firstNode, Node<T> secondNode) {
+
+        Node<T> previous1 = null;
+        Node<T> current1 = this.head;
+
+        while (current1 != firstNode) {
+            previous1 = current1;
+            current1 = current1.next;
+        }
+        Node<T> previous2 = null;
+        Node<T> current2 = this.head;
+
+        while (current2 != secondNode) {
+            previous2 = current2;
+            current2 = current2.next;
+        }
+
+        previous1.next = current2;
+        previous2.next = current1;
+        Node<T> current1Next = current1.next;
+        Node<T> current2Next = current2.next;
+        current1.next = current2.next;
+        current2Next = current1Next;
+
+        
+        
+        
+
+        
+
         
     }
 }
