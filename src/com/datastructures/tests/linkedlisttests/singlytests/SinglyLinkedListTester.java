@@ -9,8 +9,8 @@ public class SinglyLinkedListTester {
         linkedList.append("B");
         linkedList.append("C");
         linkedList.append("D");
-        linkedList.reverse();
-        linkedList.formattedPrint();
+
+        
 
 
 

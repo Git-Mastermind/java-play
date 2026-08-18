@@ -1,4 +1,6 @@
 package com.datastructures.linkedlist.singly;
+import java.util.List;
+import java.util.ArrayList;
 
 
 public class SinglyLinkedList<T> {
@@ -147,5 +149,38 @@ public class SinglyLinkedList<T> {
             current = next;
         }
         this.head = previous;
+    }
+
+    public void removeDuplicates() {
+        Node<T> previous = null;
+        Node<T> current = this.head;
+    
+        List<T> uniqueValues = new ArrayList<>();
+
+        while (current.next != null) {
+            if (!uniqueValues.contains(current.data)) {
+                uniqueValues.add(current.data);
+            }
+            else {
+                previous.next = current.next;
+            }
+            previous = current;
+            current = current.next;
+        }
+    }
+
+    public Node<T> nthNodeFromEnd(int n) {
+        Node<T> front = this.head;
+        Node<T> back = this.head;
+
+        for (int i = 0; i < n; i++) {
+            front = front.next;
+        }
+        while (front != null) {
+            front = front.next;
+            back = back.next;
+        }
+
+        return back;
     }
 }
