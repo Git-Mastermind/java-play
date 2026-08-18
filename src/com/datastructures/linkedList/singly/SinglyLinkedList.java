@@ -91,6 +91,23 @@ public class SinglyLinkedList<T> {
             previous = previous.next;
         }
         previous.next = current.next;
+    }
 
+    public void delete(int index) {
+        if (index == 0) {
+            this.head = this.head.next;
+            return;
+        }
+        int currentIndex = 1;
+        Node<T> previous = this.head;
+        Node<T> current = previous.next;
+
+        while (currentIndex != index) {
+            current = current.next;
+            previous = previous.next;
+            currentIndex++;
+        }
+        previous.next = current.next;
+        
     }
 }
