@@ -49,10 +49,11 @@ public class SinglyLinkedList<T> {
     }
 
     public void append(T dataForNode) {
+        Node<T> nodeToAppend = new Node<>(dataForNode, null);
         if (this.size() == 0) {
+            this.head = nodeToAppend;
             return;
         }
-        Node<T> nodeToAppend = new Node<>(dataForNode, null);
         Node<T> current = this.head;
 
         while (current.next != null) {

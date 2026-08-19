@@ -11,6 +11,9 @@ public class CircularLinkedList<T> {
         Node<T> current = this.head;
         int counter = 1;
 
+        if (current.next == null) {
+            return counter;
+        }
         while (current.next != this.head) {
             counter++;
             current = current.next;
@@ -19,19 +22,23 @@ public class CircularLinkedList<T> {
     }
 
     public void append(T value) {
-        Node<T> newNode = new Node<>(value, null);
-
+        Node<T> nodeToAppend = new Node<>(value, this.head);
         if (this.size() == 0) {
-            this.head = newNode;
+            this.head = nodeToAppend;
             return;
         }
 
+        else if (this.size() == 1) {
+            this.head.next = nodeToAppend;
+            return;
+        }
         Node<T> current = this.head;
+
         while (current.next != this.head) {
             current = current.next;
         }
-        current.next = newNode;
-        newNode.next = this.head;
+        current.next = nodeToAppend;
+        
     }
 
     public void formattedPrint() {
@@ -40,8 +47,10 @@ public class CircularLinkedList<T> {
 
         while (current.next.next != this.head) {
             formattedLlist.append(current.data + " ---> ");
+            current = current.next;
         }
-        formattedLlist.append(current.data + "---> back to head");
+        formattedLlist.append(current.data + " ---> head");
+        System.out.println(formattedLlist);
     }
 
 }
