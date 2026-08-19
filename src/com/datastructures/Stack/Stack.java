@@ -32,6 +32,18 @@ public class Stack<T> {
         return stack.size();
     }
 
+    public boolean isEqual(Stack<T> inputStack) {
+        if (inputStack.size() != this.size()) {
+            return false;
+        }
+        for (int i = 0; i <= this.size();) {
+            if (inputStack.pop() != this.pop()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 }

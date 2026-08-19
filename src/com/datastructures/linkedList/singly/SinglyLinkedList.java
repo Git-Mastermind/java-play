@@ -1,15 +1,21 @@
 package com.datastructures.linkedlist.singly;
+
 import java.util.List;
 import java.util.ArrayList;
-
+import com.datastructures.stack.Stack;
 
 public class SinglyLinkedList<T> {
     private Node<T> head;
 
+    
 
     public SinglyLinkedList(Node<T> head) {
         this.head = head;
     }
+
+
+
+
 
     public int size() {
         int counter = 1;
@@ -42,7 +48,6 @@ public class SinglyLinkedList<T> {
 
     }
 
-
     public void append(T dataForNode) {
         if (this.size() == 0) {
             return;
@@ -63,8 +68,8 @@ public class SinglyLinkedList<T> {
         Node<T> nodeToPrepend = new Node<>(dataForNode, this.head);
         nodeToPrepend.next = this.head;
         this.head = nodeToPrepend;
-    }  
-    
+    }
+
     public Node<T> get(int index) {
         Node<T> current = this.head;
 
@@ -72,7 +77,7 @@ public class SinglyLinkedList<T> {
             current = current.next;
         }
         return current;
-        
+
     }
 
     public void insertAfter(T nodeData, Node<T> insertAfter) {
@@ -112,7 +117,6 @@ public class SinglyLinkedList<T> {
         previous.next = current.next;
     }
 
-   
     public void swap(Node<T> firstNode, Node<T> secondNode) {
 
         Node<T> previous1 = null;
@@ -154,14 +158,13 @@ public class SinglyLinkedList<T> {
     public void removeDuplicates() {
         Node<T> previous = null;
         Node<T> current = this.head;
-    
+
         List<T> uniqueValues = new ArrayList<>();
 
         while (current.next != null) {
             if (!uniqueValues.contains(current.data)) {
                 uniqueValues.add(current.data);
-            }
-            else {
+            } else {
                 previous.next = current.next;
             }
             previous = current;
@@ -195,6 +198,41 @@ public class SinglyLinkedList<T> {
             current = current.next;
         }
         return counter;
-
     }
+
+    public boolean isPalindrome() {
+        Node<T> current = this.head;
+        Stack<T> firstStack = new Stack<>();
+        Stack<T> secondStack = new Stack<>();
+
+        while (current.next != null) {
+            firstStack.push(current.data);
+            current = current.next;
+        }
+        for (int i = 0; i <= firstStack.size(); i++) {
+            secondStack.push(firstStack.pop());
+        }
+        return firstStack.isEqual(secondStack);
+    }
+
+    public Node<T> tail() {
+        Node<T> current = this.head;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        return current;
+    }
+
+    public void swapHeadAndTail() {
+        Node<T> tail = this.tail();
+
+        Node<T> next = this.head.next;
+        this.head.next = null;
+
+        this.head = tail;
+        tail.next = next;
+    }
+
+   
 }

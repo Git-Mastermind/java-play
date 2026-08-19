@@ -4,14 +4,15 @@ import com.datastructures.linkedlist.singly.Node;
 
 public class SinglyLinkedListTester {
     public static void main(String[] args) {
-        Node<Integer> head = new Node<>(1, null);
-        SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>(head);
-        linkedList.append(4);
-        linkedList.append(8);
-        linkedList.append(4);
-        linkedList.append(2);
-        int occurances = linkedList.countOccurances(4);
-        System.out.println(occurances);
+        Node<String> head = new Node<>("A", null);
+        SinglyLinkedList<String> linkedList = new SinglyLinkedList<>(head);
+        linkedList.append("B");
+        linkedList.append("C");
+        linkedList.append("D");
+        linkedList.append("E");
+        linkedList.append("F");
+        linkedList.reverse();
+        linkedList.formattedPrint();
 
         
 
