@@ -23,14 +23,17 @@ public class CircularLinkedList<T> {
     }
 
     public void append(T value) {
-        Node<T> nodeToAppend = new Node<>(value, this.head);
+        Node<T> nodeToAppend = new Node<>(value, null);
         if (this.size() == 0) {
             this.head = nodeToAppend;
+            nodeToAppend.next = nodeToAppend;
             return;
         }
 
         else if (this.size() == 1) {
             this.head.next = nodeToAppend;
+            nodeToAppend.next = this.head;
+            System.out.println(this.head.data);
             return;
         }
         Node<T> current = this.head;
@@ -39,19 +42,20 @@ public class CircularLinkedList<T> {
             current = current.next;
         }
         current.next = nodeToAppend;
+        nodeToAppend.next = this.head;
+
 
     }
 
     public void formattedPrint() {
         Node<T> current = this.head;
-        StringBuilder formattedLlist = new StringBuilder();
+        StringBuilder formattedPrint = new StringBuilder();
 
         while (current.next != this.head) {
-            formattedLlist.append(current.data + " ---> ");
+            formattedPrint.append(current.data + " --> ");
             current = current.next;
         }
-        formattedLlist.append(current.data + " ---> head");
-        System.out.println(formattedLlist);
+        System.out.println(formattedPrint);
     }
 
     public void prepend(T value) {
@@ -59,9 +63,13 @@ public class CircularLinkedList<T> {
 
         if (this.size() == 0) {
             this.head = nodeToPrepend;
+            nodeToPrepend.next = nodeToPrepend;
+            return;
         }
-
+        this.head.next = nodeToPrepend;
+        nodeToPrepend.next = this.head;
         this.head = nodeToPrepend;
+        System.out.println(this.head.data);
 
         
 
