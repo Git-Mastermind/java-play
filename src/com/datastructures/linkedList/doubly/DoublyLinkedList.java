@@ -1,5 +1,61 @@
 package com.datastructures.linkedlist.doubly;
 
-public class DoublyLinkedList {
-    
+public class DoublyLinkedList<T> {
+    private Node<T> head;
+
+    public DoublyLinkedList(Node<T> head) {
+        this.head = head;
+    }
+
+    public int size() {
+        Node<T> current = this.head;
+        int counter = 1;
+
+        if (this.head == null) {
+            return 0;
+        }
+        
+        while (current.next != null) {
+            counter++;
+            current = current.next;
+        }
+
+        return counter;
+    }
+
+    public void printList() {
+        Node<T> current = this.head;
+        StringBuilder formattedPrint = new StringBuilder();
+
+        if (this.size() == 0) {
+            System.out.println("--> null");
+            return;
+        }
+        formattedPrint.append("null --> ");
+
+        while (current.next != null) {
+            formattedPrint.append(current.data + " --> ");
+            current = current.next;
+        }
+        formattedPrint.append(current.data + " --> null");
+        System.out.println(formattedPrint);
+    }
+
+    public void append(T value) {
+        Node<T> current = this.head;
+        Node<T> nodeToAppend = new Node<>(value);
+
+        if (this.size() == 0) {
+            nodeToAppend = this.head;
+            nodeToAppend.next = null;
+            nodeToAppend.prev = null;
+            return;
+        }
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = nodeToAppend;
+        nodeToAppend.prev = current;
+    }
 }
