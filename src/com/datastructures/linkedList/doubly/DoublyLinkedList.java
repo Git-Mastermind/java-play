@@ -46,7 +46,7 @@ public class DoublyLinkedList<T> {
         Node<T> nodeToAppend = new Node<>(value);
 
         if (this.size() == 0) {
-            nodeToAppend = this.head;
+            this.head = nodeToAppend;
             nodeToAppend.next = null;
             nodeToAppend.prev = null;
             return;
@@ -57,5 +57,21 @@ public class DoublyLinkedList<T> {
         }
         current.next = nodeToAppend;
         nodeToAppend.prev = current;
+    }
+
+    public void prepend(T value) {
+        Node<T> current = this.head;
+        Node<T> nodeToPrepend = new Node<>(value);
+
+        if (this.size() == 0) {
+            this.head = nodeToPrepend;
+            nodeToPrepend.next = null;
+            nodeToPrepend.prev = null;
+            return;
+        }
+
+        nodeToPrepend.next = this.head;
+        nodeToPrepend.prev = null;
+        this.head = nodeToPrepend;
     }
 }
