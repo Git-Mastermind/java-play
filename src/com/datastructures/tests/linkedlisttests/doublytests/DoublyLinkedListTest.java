@@ -7,8 +7,10 @@ public class DoublyLinkedListTest {
     public static void main(String[] args) {
         Node<String> head = new Node<>("A");
         DoublyLinkedList<String> llist = new DoublyLinkedList<>(head);
-        llist.prepend("B");
-        llist.prepend("C");
+        llist.append("B");
+        llist.append("C");
+        Node<String> node = llist.get("B");
+        llist.insertAfter("C2", node);
         llist.printList();
     }
 }

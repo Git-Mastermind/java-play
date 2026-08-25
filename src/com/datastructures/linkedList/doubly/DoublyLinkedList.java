@@ -74,4 +74,39 @@ public class DoublyLinkedList<T> {
         nodeToPrepend.prev = null;
         this.head = nodeToPrepend;
     }
+
+    public Node<T> get(T value) {
+        Node<T> current = this.head;
+
+        if (this.size() == 0) {
+            return null;
+        }
+
+        while (current.data != value) {
+            current = current.next;
+        }
+        return current;
+    }
+
+    public void insertAfter(T valueToInsert, Node<T> insertAfter) {
+        Node<T> current = this.head;
+        Node<T> newNode = new Node<>(valueToInsert);
+
+        if (this.size() == 0) {
+            this.head = newNode;
+            newNode.next = null;
+            newNode.prev = null;
+            return;
+        }
+
+        while (current != insertAfter) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+        newNode.prev = current;
+        current.next.next.prev = newNode;
+
+
+    }
 }
