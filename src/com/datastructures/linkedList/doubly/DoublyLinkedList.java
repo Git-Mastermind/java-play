@@ -1,4 +1,6 @@
 package com.datastructures.linkedlist.doubly;
+import java.util.List;
+import java.util.ArrayList;
 
 public class DoublyLinkedList<T> {
     private Node<T> head;
@@ -14,7 +16,7 @@ public class DoublyLinkedList<T> {
         if (this.head == null) {
             return 0;
         }
-        
+
         while (current.next != null) {
             counter++;
             current = current.next;
@@ -122,7 +124,38 @@ public class DoublyLinkedList<T> {
         deleteNode.next.prev = current;
     }
 
-    public void hello() {
-        System.out.println("hello");
+    public void reverse() {
+        Node<T> temporaryPrevious = null;
+        Node<T> current = this.head;
+
+        while (current != null) {
+            temporaryPrevious = current.prev;
+            current.prev = current.next;
+            current.next = temporaryPrevious;
+            current = current.prev;
+        }
+
+        if (temporaryPrevious != null) {
+            this.head = temporaryPrevious;
+        }
+    }
+
+    public void removeDuplicates() {
+        if (this.head == null) {
+            return;
+        }
+
+        Node<T> current = this.head;
+        List<T> uniqueValues = new ArrayList<>();
+
+        while (current.next != null) {
+            if (!uniqueValues.contains(current.data)) {
+                uniqueValues.add(current.data);
+            }
+            else {
+                this.delete(current);
+            }
+            current = current.next;
+        }
     }
 }
