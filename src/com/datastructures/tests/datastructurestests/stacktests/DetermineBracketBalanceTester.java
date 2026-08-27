@@ -1,4 +1,4 @@
-package com.datastructures.tests.stacktests;
+package com.datastructures.tests.datastructurestests.stacktests;
 
 import com.datastructures.stack.DetermineBracketBalance;
 

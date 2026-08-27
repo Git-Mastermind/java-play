@@ -1,4 +1,4 @@
-package com.datastructures.tests.linkedlisttests.doublytests;
+package com.datastructures.tests.datastructurestests.linkedlisttests.doublytests;
 
 import com.datastructures.linkedlist.doubly.DoublyLinkedList;
 import com.datastructures.linkedlist.doubly.Node;

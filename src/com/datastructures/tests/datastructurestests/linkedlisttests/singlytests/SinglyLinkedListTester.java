@@ -1,4 +1,4 @@
-package com.datastructures.tests.linkedlisttests.singlytests;
+package com.datastructures.tests.datastructurestests.linkedlisttests.singlytests;
 import com.datastructures.linkedlist.singly.SinglyLinkedList;
 import com.datastructures.linkedlist.singly.Node;
 

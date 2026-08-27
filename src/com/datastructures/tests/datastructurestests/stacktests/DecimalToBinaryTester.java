@@ -1,4 +1,4 @@
-package com.datastructures.tests.stacktests;
+package com.datastructures.tests.datastructurestests.stacktests;
 import com.datastructures.other.DecimalToBinary;
 import com.datastructures.stack.Stack;
 

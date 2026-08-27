@@ -1,4 +1,4 @@
-package com.datastructures.tests.linkedlisttests.circulartests;
+package com.datastructures.tests.datastructurestests.linkedlisttests.circulartests;
 
 import com.datastructures.linkedlist.circular.CircularLinkedList;
 import com.datastructures.linkedlist.circular.Node;
