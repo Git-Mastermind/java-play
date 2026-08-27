@@ -6,15 +6,13 @@ import com.datastructures.linkedlist.doubly.Node;
 public class DoublyLinkedListTest {
     public static void main(String[] args) {
         Node<String> head = new Node<>("A");
-        DoublyLinkedList<String> llist = new DoublyLinkedList<>(head);
-        llist.append("B");
-        llist.append("B");
-        llist.append("C");
-        llist.append("D");
-        llist.append("E");
+        Node<Integer> intHead = new Node<>(1);
+        DoublyLinkedList<Integer> llist = new DoublyLinkedList<>(intHead);
+        llist.append(2);
+        llist.append(3);
+        llist.append(4);
+        llist.append(5);
         
-        llist.removeDuplicates();
-
-        llist.printList();
+        llist.pairsThatAddToInt(5, intHead);
     }
 }

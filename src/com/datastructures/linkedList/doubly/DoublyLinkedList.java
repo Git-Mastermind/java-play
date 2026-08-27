@@ -1,4 +1,5 @@
 package com.datastructures.linkedlist.doubly;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class DoublyLinkedList<T> {
         Node<T> current = this.head;
         Node<T> nodeToAppend = new Node<>(value);
 
-        if (this.size() == 0) {
+        if (this.head == null) {
             this.head = nodeToAppend;
             nodeToAppend.next = null;
             nodeToAppend.prev = null;
@@ -65,7 +66,7 @@ public class DoublyLinkedList<T> {
         Node<T> current = this.head;
         Node<T> nodeToPrepend = new Node<>(value);
 
-        if (this.size() == 0) {
+        if (this.head == null) {
             this.head = nodeToPrepend;
             nodeToPrepend.next = null;
             nodeToPrepend.prev = null;
@@ -80,7 +81,7 @@ public class DoublyLinkedList<T> {
     public Node<T> get(T value) {
         Node<T> current = this.head;
 
-        if (this.size() == 0) {
+        if (this.head == null) {
             return null;
         }
 
@@ -94,7 +95,7 @@ public class DoublyLinkedList<T> {
         Node<T> current = this.head;
         Node<T> newNode = new Node<>(valueToInsert);
 
-        if (this.size() == 0) {
+        if (this.head == null) {
             this.head = newNode;
             newNode.next = null;
             newNode.prev = null;
@@ -151,11 +152,34 @@ public class DoublyLinkedList<T> {
         while (current.next != null) {
             if (!uniqueValues.contains(current.data)) {
                 uniqueValues.add(current.data);
-            }
-            else {
+            } else {
                 this.delete(current);
             }
             current = current.next;
         }
+    }
+
+    public void pairsThatAddToInt(int sum, Node<Integer> intHead) {
+        if (intHead == null) {
+            return;
+        }
+        Node<Integer> outerCurr = intHead;
+        Node<Integer> innerCurr = intHead.next;
+        List<String> pairsAddSum = new ArrayList<>(); 
+
+        while (outerCurr.next != null) {
+            innerCurr = outerCurr.next;
+            while (innerCurr != null) {
+                if (outerCurr.data + innerCurr.data == sum) {
+                    pairsAddSum.add("(" + outerCurr.data + "," + innerCurr.data + ")");
+                    innerCurr = innerCurr.next;
+                }
+                else {
+                    innerCurr = innerCurr.next;
+                }
+            }
+            outerCurr = outerCurr.next;
+        }
+        System.out.println(pairsAddSum);
     }
 }
