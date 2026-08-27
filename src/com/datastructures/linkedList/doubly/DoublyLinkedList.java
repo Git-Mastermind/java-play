@@ -27,7 +27,7 @@ public class DoublyLinkedList<T> {
         Node<T> current = this.head;
         StringBuilder formattedPrint = new StringBuilder();
 
-        if (this.size() == 0) {
+        if (this.head == null) {
             System.out.println("--> null");
             return;
         }
@@ -111,14 +111,18 @@ public class DoublyLinkedList<T> {
     public void delete(Node<T> deleteNode) {
         Node<T> current = this.head;
 
-        if (this.size() == 0) {
-            this.head = null;
+        if (this.head == null) {
+            return; // clear
         }
 
-        while (current.next != null) {
+        while (current.next != deleteNode) {
             current = current.next;
         }
         current.next = deleteNode.next;
         deleteNode.next.prev = current;
+    }
+
+    public void hello() {
+        System.out.println("hello");
     }
 }

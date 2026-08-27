@@ -9,8 +9,8 @@ public class DoublyLinkedListTest {
         DoublyLinkedList<String> llist = new DoublyLinkedList<>(head);
         llist.append("B");
         llist.append("C");
-        Node<String> node = llist.get("B");
-        llist.delete(node);
+        Node<String> nodeToDelete = llist.get("B");
+        llist.delete(nodeToDelete);
         llist.printList();
     }
 }
