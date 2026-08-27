@@ -106,7 +106,19 @@ public class DoublyLinkedList<T> {
         current.next = newNode;
         newNode.prev = current;
         current.next.next.prev = newNode;
+    }
 
+    public void delete(Node<T> deleteNode) {
+        Node<T> current = this.head;
 
+        if (this.size() == 0) {
+            this.head = null;
+        }
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = deleteNode.next;
+        deleteNode.next.prev = current;
     }
 }

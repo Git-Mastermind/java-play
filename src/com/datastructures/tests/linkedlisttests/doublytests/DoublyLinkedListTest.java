@@ -10,7 +10,7 @@ public class DoublyLinkedListTest {
         llist.append("B");
         llist.append("C");
         Node<String> node = llist.get("B");
-        llist.insertAfter("C2", node);
+        llist.delete(node);
         llist.printList();
     }
 }
