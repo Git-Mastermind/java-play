@@ -33,7 +33,6 @@ public class CircularLinkedList<T> {
         else if (this.size() == 1) {
             this.head.next = nodeToAppend;
             nodeToAppend.next = this.head;
-            System.out.println(this.head.data);
             return;
         }
         Node<T> current = this.head;
@@ -55,6 +54,7 @@ public class CircularLinkedList<T> {
             formattedPrint.append(current.data + " --> ");
             current = current.next;
         }
+        formattedPrint.append(current.data + " --> back to head");
         System.out.println(formattedPrint);
     }
 

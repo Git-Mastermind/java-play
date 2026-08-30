@@ -8,8 +8,9 @@ public class CircularLinkedListTest {
         Node<String> head = new Node<>("A", null);
         CircularLinkedList<String> llist = new CircularLinkedList<>(head);
         llist.append("B");
-        llist.prepend("C");
-
+        llist.append("C");
+        llist.append("D");
+        llist.append("E");
         llist.formattedPrint();
     }
 }
