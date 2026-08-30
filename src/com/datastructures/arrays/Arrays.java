@@ -2,18 +2,32 @@ package com.datastructures.arrays;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Arrays<T> {
-    private List<T> array = new ArrayList<>();
+public class Arrays {
+    private Integer[] array;
 
-    public void append(T value) {
-        array.add(value);
+    public Arrays(int size) {
+        array = new Integer[size];
+    }
+
+    public void append(Integer value) {
+        int i = 0;
+        while (array[i] != null) {
+            i++;
+        }
+        array[i] = value;
     }
     public void print() {
-        System.out.println(array);
+        StringBuilder formattedArray = new StringBuilder();
+        formattedArray.append("[");
+        for (int i = 0; i < array.length; i++) {
+            formattedArray.append(array[i] + ", ");
+        }
+        formattedArray.append("]");
+        System.out.println(formattedArray);
     }
 
     public int size() {
-        return array.size();
+        return array.length;
     }
 
     public void twoSum(int sum) {
@@ -29,4 +43,8 @@ public class Arrays<T> {
         }
         System.out.println(pairsOfSums);
     } 
+
+    public void addOne() {
+        
+    }
 }
