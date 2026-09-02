@@ -8,8 +8,8 @@ public class BinaryTreeTest {
         Node<Integer> root = new Node<>(1);
         BinaryTree<Integer> tree = new BinaryTree<>(root);
 
-        int height = tree.height(root);
-        System.out.println(height);
+        int size = tree.size();
+        System.out.println(size);
         
         
     }

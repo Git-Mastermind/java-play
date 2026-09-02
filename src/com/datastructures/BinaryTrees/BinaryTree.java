@@ -86,4 +86,25 @@ public class BinaryTree<T> {
         }
         return 1 + right_height;
     }
+
+    public int size() {
+        Node<T> node = new Node<>(null);
+        Queue<T> queue = new Queue<>();
+        queue.append(this.root.value);
+
+        int counter = 0;
+
+        while (queue.size() >= 1) {
+            node.value = queue.peek();
+            counter++;
+
+            if (node.left != null) {
+                queue.append(node.left.value);
+            }
+            if (node.right != null) {
+                queue.append(node.right.value);
+            }
+        }
+        return counter;
+    }
 }
