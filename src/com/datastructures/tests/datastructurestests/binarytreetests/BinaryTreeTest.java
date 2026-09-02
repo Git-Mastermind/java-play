@@ -8,7 +8,7 @@ public class BinaryTreeTest {
         Node<Integer> root = new Node<>(1);
         BinaryTree<Integer> tree = new BinaryTree<>(root);
 
-        StringBuilder traversalNotebook = tree.levelOrderTraversal();
+        StringBuilder traversalNotebook = tree.reverseLevelOrderTraversal();
         System.out.println(traversalNotebook);
         
         

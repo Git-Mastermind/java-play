@@ -1,6 +1,7 @@
 package com.datastructures.binarytrees;
 
 import com.datastructures.queue.Queue;
+import com.datastructures.stack.Stack;
 
 public class BinaryTree<T> {
     Node<T> root;
@@ -34,10 +35,9 @@ public class BinaryTree<T> {
         queue.append(this.root.value);
         StringBuilder traversalNotebook = new StringBuilder();
 
-        while (queue.size() >= 1){
+        while (queue.size() >= 1) {
             node.value = queue.peek();
             traversalNotebook.append(queue.poll() + " - ");
-        
 
             if (node.left != null) {
                 queue.append(node.left.value);
@@ -47,6 +47,31 @@ public class BinaryTree<T> {
             }
         }
         return traversalNotebook;
-            
+    }
+
+    public StringBuilder reverseLevelOrderTraversal() {
+        Queue<T> queue = new Queue<>();
+        Stack<T> stack = new Stack<>();
+
+        Node<T> node = new Node<>(null);
+        StringBuilder traversalNotebook = new StringBuilder();
+
+        queue.append(this.root.value);
+
+        while (queue.size() >= 1) {
+            node.value = queue.peek();
+            stack.push(queue.poll());
+
+            if (node.right != null) {
+                queue.append(node.right.value);
+            }
+            if (node.left != null) {
+                queue.append(node.left.value);
+            }
+        }
+        while (stack.size() != 0) {
+            traversalNotebook.append(stack.pop() + " - ");
+        }
+        return traversalNotebook;
     }
 }
