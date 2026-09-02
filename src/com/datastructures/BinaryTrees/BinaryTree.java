@@ -74,4 +74,16 @@ public class BinaryTree<T> {
         }
         return traversalNotebook;
     }
+
+    public int height(Node<T> node) {
+        if (node == null) {
+            return -1;
+        }
+        int left_height = this.height(node.left);
+        int right_height = this.height(node.right);
+        if (left_height >= right_height) {
+            return 1 + left_height;
+        }
+        return 1 + right_height;
+    }
 }
