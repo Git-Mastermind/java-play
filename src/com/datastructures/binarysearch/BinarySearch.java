@@ -100,4 +100,25 @@ public class BinarySearch {
         }
         return fixedPoints;
     }
+
+    public int findFixedPointsFaster(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        int mid;
+
+        while (low <= high) {
+            mid = Math.floorDiv((low + high), 2);
+
+            if (nums[mid] == mid) {
+                return mid;
+            }
+            else if (nums[mid] > mid) {
+                low = mid + 1;
+            }
+            else if (nums[mid] < mid) {
+                high = mid - 1;
+            }
+        }
+        return nums[low];
+    } 
 }
