@@ -121,4 +121,54 @@ public class BinarySearch {
         }
         return nums[low];
     } 
+
+    public int findBitonicPeak(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        int mid;
+        int left;
+        int right;
+
+        while (low <= high) {
+            mid = Math.floorDiv((low + high), 2);
+            left = nums[mid - 1];
+            right = nums[mid + 1];
+
+            if (left > nums[mid] && nums[mid] > right) {
+                high = mid - 1;
+            }
+            else if (left > nums[mid] && nums[mid] < right) {
+                low = mid + 1;
+            }
+            else if (left < nums[mid] && nums[mid] > right) {
+                return nums[mid];
+            }
+        }
+        return nums[low];
+    }   
+
+    public int findFirstOccuranceOf(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        int mid;
+
+        while (low <= high) {
+            mid = Math.floorDiv((low + high), 2);
+
+            if (nums[mid] == target) {
+                if (nums[mid - 1] == target) {
+                    return mid - 1;
+                }
+                return mid;
+            }
+
+            else if (nums[mid] < target) {
+                low = mid + 1;
+            }
+            else if (nums[mid] < target) {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
 }

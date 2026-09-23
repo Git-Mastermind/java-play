@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class BinarySearchTest {
     public static void main(String[] args) {
         BinarySearch binarySearch = new BinarySearch();
-        int[] nums = { 1,2,3,4,5,5,6,7,8,9 };
-        int result = binarySearch.findFixedPointsFaster(nums);
+        int[] nums = { -14, -10, 0, 100, 108, 108, 200, 580, 900 };
+        int result = binarySearch.findFirstOccuranceOf(nums, 108);
         System.out.println(result);
     }
 }
