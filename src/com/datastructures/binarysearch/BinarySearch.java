@@ -14,12 +14,10 @@ public class BinarySearch {
                 long endTime = System.nanoTime();
                 System.out.println("Execution time: " + (endTime - startTime));
                 return true;
-                
-            }
-            else if (toSearch[mid] > valueToSearch) {
+
+            } else if (toSearch[mid] > valueToSearch) {
                 high = mid - 1;
-            }
-            else if (toSearch[mid] < valueToSearch) {
+            } else if (toSearch[mid] < valueToSearch) {
                 low = mid + 1;
             }
         }
@@ -39,6 +37,25 @@ public class BinarySearch {
         }
         long endTime = System.nanoTime();
         System.out.println("Time to execute: " + (endTime - startTime));
+        return false;
+    }
+
+    public boolean binarySearch2(int[] nums, int numberToFind) {
+        int low = 0;
+        int high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = Math.floorDiv((low + high), 2);
+            if (numberToFind == nums[mid]) {
+                return true;
+            }
+            else if (numberToFind < nums[mid]) {
+                high = mid - 1;
+            }
+            else if (numberToFind > nums[mid]) {
+                low = mid + 1;
+            }
+        }
         return false;
     }
 }
