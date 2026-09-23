@@ -38,7 +38,7 @@ public class BinarySearch {
             }
         }
         long endTime = System.nanoTime();
-        System.out.println("Execution time: " + (endTime - startTime));
+        System.out.println("Time to execute: " + (endTime - startTime));
         return false;
     }
 }
