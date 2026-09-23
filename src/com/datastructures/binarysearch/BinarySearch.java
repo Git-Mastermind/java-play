@@ -1,5 +1,8 @@
 package com.datastructures.binarysearch;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearch {
     public boolean binarySearch(int[] toSearch, int valueToSearch) {
         long startTime = System.nanoTime();
@@ -48,14 +51,53 @@ public class BinarySearch {
             int mid = Math.floorDiv((low + high), 2);
             if (numberToFind == nums[mid]) {
                 return true;
-            }
-            else if (numberToFind < nums[mid]) {
+            } else if (numberToFind < nums[mid]) {
                 high = mid - 1;
-            }
-            else if (numberToFind > nums[mid]) {
+            } else if (numberToFind > nums[mid]) {
                 low = mid + 1;
             }
         }
         return false;
+    }
+
+    public int findClosestNumberInArray(int[] nums, int target) {
+        List<Integer> usedNumbers = new ArrayList<>();
+        int low = 0;
+        int high = nums.length - 1;
+        int mid;
+        int right;
+        int left;
+        int minimumDifferenceLeft;
+        int minimumDifferenceRight;
+
+        while (low <= high) {
+            mid = Math.floorDiv((low + high), 2);
+            right = nums[mid + 1];
+            usedNumbers.add(right);
+            left = nums[mid - 1];
+            usedNumbers.add(left);
+            minimumDifferenceLeft = left - target;
+            minimumDifferenceRight = right - target;
+
+            if (minimumDifferenceRight  >= minimumDifferenceLeft) {
+                high = mid - 1;
+            }
+            else if (minimumDifferenceLeft < minimumDifferenceRight) {
+                low = mid + 1;
+            }
+        }
+        // work in progress
+        return 0;
+
+    }
+
+    public List<Integer> findFixedPoint(int[] nums) {
+        List<Integer> fixedPoints = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == i) {
+                fixedPoints.add(i);
+            }
+        }
+        return fixedPoints;
     }
 }
