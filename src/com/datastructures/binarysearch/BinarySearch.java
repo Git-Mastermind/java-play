@@ -171,4 +171,23 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public int[] integerSquareRoot(int target) {
+        int[] powers = new int[2];
+        int squares = 1;
+
+        while (Math.pow(squares, 2) <= target) {
+            squares++;
+        }
+        powers[0] = squares - 1;
+        powers[1] = squares;
+        return powers;
+    }
+
+    public void arrayPrint(int[] array) {
+        for (int item : array) {
+            System.out.println(item);
+        }
+    }
+
 }

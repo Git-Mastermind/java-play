@@ -8,7 +8,7 @@ public class BinarySearchTest {
     public static void main(String[] args) {
         BinarySearch binarySearch = new BinarySearch();
         int[] nums = { -14, -10, 0, 100, 108, 108, 200, 580, 900 };
-        int result = binarySearch.findFirstOccuranceOf(nums, 108);
-        System.out.println(result);
+        int[] powers = binarySearch.integerSquareRoot(12);
+        binarySearch.arrayPrint(powers);
     }
 }
