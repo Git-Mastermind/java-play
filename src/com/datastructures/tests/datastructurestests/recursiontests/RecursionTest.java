@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
-        System.out.println(recursion.summation(670));
+        int digits = recursion.countDigits(42891);
+        System.out.println(digits);
    }
 }
  

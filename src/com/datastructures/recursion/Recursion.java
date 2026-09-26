@@ -105,4 +105,12 @@ public class Recursion {
         return n + this.summation(--n);
     }
 
+    public int countDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return 1 + this.countDigits(n / 10);
+
+    }
+
 }
