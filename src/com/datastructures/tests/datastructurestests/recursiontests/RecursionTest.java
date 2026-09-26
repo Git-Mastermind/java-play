@@ -5,7 +5,9 @@ import com.datastructures.recursion.Recursion;
 public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
-        String str = "ilovecoDing";
-        recursion.uppercaseLetterInStringRecursive(str, 0);
+        String str = "EshanJha";
+        int counter = 0;
+        int index = 0;
+        recursion.lengthOfStringRecursive(str, index, counter);
     }
 }

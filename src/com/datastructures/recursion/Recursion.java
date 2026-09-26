@@ -36,4 +36,22 @@ public class Recursion {
         }
         return listedString;
     }
+
+    public int lengthOfStringIterative(String str) {
+        List<Character> listedStr = this.toArray(str);
+        int counter = 0;
+
+        for (int i = 0; i < listedStr.size(); i++) {
+            counter++;
+        }
+        return counter;
+    }
+
+    public void lengthOfStringRecursive(String str, int index, int counter) {
+        if (index == str.length() - 1) {
+            System.out.println(counter);
+            return;
+        }
+        this.lengthOfStringRecursive(str, index++, counter++);
+    }
 }
