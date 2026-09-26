@@ -47,11 +47,10 @@ public class Recursion {
         return counter;
     }
 
-    public void lengthOfStringRecursive(String str, int index, int counter) {
+    public int lengthOfStringRecursive(String str, int index) {
         if (index == str.length() - 1) {
-            System.out.println(counter);
-            return;
+            return 1;
         }
-        this.lengthOfStringRecursive(str, index++, counter++);
+        return 1 + this.lengthOfStringRecursive(str, ++index);
     }
 }

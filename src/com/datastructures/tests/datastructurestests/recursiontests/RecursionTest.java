@@ -6,8 +6,8 @@ public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
         String str = "EshanJha";
-        int counter = 0;
         int index = 0;
-        recursion.lengthOfStringRecursive(str, index, counter);
+        int lengthOfString = recursion.lengthOfStringRecursive(str, index);
+        System.out.println(lengthOfString);
     }
 }
