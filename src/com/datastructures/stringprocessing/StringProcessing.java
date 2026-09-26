@@ -23,7 +23,19 @@ public class StringProcessing {
             endPointer = str.charAt(endPointerIndex);
         }
 
-        for (int i = 0; i)
+        if (startPointerCollection.size() == endPointerCollection.size()) {
+            for (int i = 0; i < startPointerCollection.size(); i++) {
+                if (startPointerCollection.get(i) != endPointerCollection.get(i)){
+                    return false;
+                }            
+            }
+            return true;
+        }
+        else {
+            return false;
+        }
+
+        
         
     }
 }
