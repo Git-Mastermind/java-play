@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
-        recursion.countdown(5);
+        System.out.println(recursion.summation(670));
    }
 }
  
