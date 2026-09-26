@@ -7,7 +7,7 @@ public class RecursionTest {
         Recursion recursion = new Recursion();
         String str = "EshanJha";
         int index = 0;
-        int lengthOfString = recursion.lengthOfStringRecursive(str, index);
-        System.out.println(lengthOfString);
+        int consonents = recursion.findAllConsonentsIterative(str);
+        System.out.println(consonents);
     }
 }

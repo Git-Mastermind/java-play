@@ -53,4 +53,16 @@ public class Recursion {
         }
         return 1 + this.lengthOfStringRecursive(str, ++index);
     }
+
+    public int findAllConsonentsIterative(String str) {
+        List<Character> vowels = new ArrayList<>(List.of('a', 'e', 'i', 'o', 'u'));
+        int consonentCounter = 0;
+        
+        for (int i = 0; i < str.length(); i++) {
+            if (!vowels.contains(str.charAt(i))) {
+                consonentCounter++;
+            }
+        }
+        return consonentCounter;
+    }
 }
