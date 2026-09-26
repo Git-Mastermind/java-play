@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
-        System.out.println(recursion.reverseString("eshanjha"));
+        System.out.println(recursion.isPalindrome("racecar"));
    }
 }
  
