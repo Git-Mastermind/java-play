@@ -6,8 +6,10 @@ public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
         String str = "EshanJha";
-        int index = 0;
-        int consonents = recursion.findAllConsonentsIterative(str);
-        System.out.println(consonents);
+        int num1 = 5;
+        int num2 = 8;
+        int multiplyResult = recursion.multiplyRecursive(num1, num2);
+        System.out.println("Normal: " + num1 * num2);
+        System.out.println(multiplyResult);
     }
 }
