@@ -87,4 +87,17 @@ public class Recursion {
         return 1 + this.lengthOfArray(array, ++index);
     }
 
+    // practice problems
+
+    public void countdown(int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.println(n);
+        this.countdown(--n);
+        
+    }
+
+    
+
 }
