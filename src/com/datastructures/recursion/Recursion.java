@@ -15,6 +15,19 @@ public class Recursion {
         return '0';
     }
 
+    public void uppercaseLetterInStringRecursive(String str, int index) {
+        if (index == str.length() - 1) {
+            System.out.println("No uppercase letters found");
+            return;
+        }
+        if (Character.isUpperCase(str.charAt(index))) {
+            System.out.println(str.charAt(index));
+            return;
+        }
+        this.uppercaseLetterInStringRecursive(str, index + 1);
+
+    }
+
     public List<Character> toArray(String str) {
         List<Character> listedString = new ArrayList<>();
 

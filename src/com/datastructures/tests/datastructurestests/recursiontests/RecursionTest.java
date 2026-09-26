@@ -6,7 +6,6 @@ public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
         String str = "ilovecoDing";
-        char firstUppercaseChar = recursion.uppercaseLetterInStringIterative(str);
-        System.out.println(firstUppercaseChar);
+        recursion.uppercaseLetterInStringRecursive(str, 0);
     }
 }
