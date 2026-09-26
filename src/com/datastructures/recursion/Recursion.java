@@ -77,8 +77,14 @@ public class Recursion {
         if (num == 1) {
             return 1;
         }
-        return num * this.fibbonaci(num - 1);
+        return num * this.factorial(num - 1);
     }
 
+    public int lengthOfArray(List<Integer> array, int index) {
+        if (index == array.size() - 1) {
+            return 1;
+        }
+        return 1 + this.lengthOfArray(array, ++index);
+    }
 
 }
