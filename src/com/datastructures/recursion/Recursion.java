@@ -87,6 +87,17 @@ public class Recursion {
         return 1 + this.lengthOfArray(array, ++index);
     }
 
+    public boolean isHighest(List<Integer> array, int checkNum) {
+        int tempHighest = 0;
+        for (int num : array) {
+            if (num > tempHighest) {
+                tempHighest = num;
+            }
+        }
+
+        return checkNum >= tempHighest;
+    }
+
     // practice problems
 
     // level 1
@@ -148,5 +159,15 @@ public class Recursion {
         }
         return isPalindrome(str, ++leftIndex, --rightIndex);
     }
+
+    public void maxInArray(List<Integer> array) {
+
+    }
+
+    public void maxInArray(List<Integer> array, int tempHighest) {
+        
+    }
+
+    
 
 }
