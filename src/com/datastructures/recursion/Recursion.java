@@ -89,6 +89,8 @@ public class Recursion {
 
     // practice problems
 
+    // level 1
+
     public void countdown(int n) {
         if (n == 0) {
             return;
@@ -111,6 +113,15 @@ public class Recursion {
         }
         return 1 + this.countDigits(n / 10);
 
+    }
+
+    // level 2
+
+    public int digitSum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return (n % 10) + this.digitSum(n / 10);
     }
 
 }
