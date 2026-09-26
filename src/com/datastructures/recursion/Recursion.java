@@ -73,10 +73,12 @@ public class Recursion {
         return num1 + this.multiplyRecursive(num1, num2 - 1);
     }
 
-    public int fibbonaci(int num) {
+    public int factorial(int num) {
         if (num == 1) {
             return 1;
         }
         return num * this.fibbonaci(num - 1);
     }
+
+
 }
