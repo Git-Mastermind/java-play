@@ -124,4 +124,15 @@ public class Recursion {
         return (n % 10) + this.digitSum(n / 10);
     }
 
+    public String reverseString(String str) {
+        return reverseString(str, 0);
+    }
+
+    private String reverseString(String str, int index) {
+        if (index == str.length() - 1) {
+            return "" + str.charAt(index);
+        }
+        return this.reverseString(str, index + 1) + str.charAt(index);
+    }
+
 }
