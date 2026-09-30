@@ -201,6 +201,19 @@ public class Recursion {
         return digitsArray;
     }
 
+    public List<Integer> convertNumberToDigitsArrayList(final int num) {
+        int number = num;
+        int lengthOfNumber = this.lengthOfNumber(number);
+        List<Integer> digitsArray = new ArrayList<>();
+
+        for (int i = 1; i <= lengthOfNumber; i++) {
+            digitsArray.set(digitsArray.size() - 1, number % 10);
+            number /= 10;
+        }
+
+        return digitsArray;
+    }
+
     public void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ", ");

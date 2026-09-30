@@ -1,5 +1,7 @@
 package com.datastructures.stringprocessing;
 
+import com.datastructures.recursion.Recursion;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -25,17 +27,68 @@ public class StringProcessing {
 
         if (startPointerCollection.size() == endPointerCollection.size()) {
             for (int i = 0; i < startPointerCollection.size(); i++) {
-                if (startPointerCollection.get(i) != endPointerCollection.get(i)){
+                if (startPointerCollection.get(i) != endPointerCollection.get(i)) {
                     return false;
-                }            
+                }
             }
             return true;
-        }
-        else {
+        } else {
             return false;
         }
-
-        
-        
     }
+
+    public List<Integer> findNextDigitsUsingLookAndSay(final int num) {
+        Recursion recursion = new Recursion();
+        int[] numArray = recursion.convertNumberToDigits(num);
+        List<Integer> nextNumInLookAndSaySequence = new ArrayList<>();
+
+        int i = 0;
+        int count = 1;
+
+        while (i < numArray.length) {
+            count = 1;
+            while (i + 1 < numArray.length && numArray[i] == numArray[i + 1]) {
+                i++;
+                count++;
+            }
+            nextNumInLookAndSaySequence.add(count);
+            nextNumInLookAndSaySequence.add(numArray[i]);
+            i++;
+        }
+        return nextNumInLookAndSaySequence;
+    }
+
+    public boolean arrayContains(Character[] strArray, char charToFind) {
+        for (int i = 0; i < strArray.length; i++) {
+            if (strArray[i] == charToFind) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean stringContains(String str, char charToFind) {
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == charToFind) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isAnagram(final String firstStr, final String secondStr) {
+        if (firstStr.length() != secondStr.length()) {
+            return false;
+        }
+        String firstString = firstStr;
+        String secondString = secondStr;
+
+        for (int i = 0; i < secondString.length(); i++) {
+            if (!this.stringContains(firstString, secondString.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
