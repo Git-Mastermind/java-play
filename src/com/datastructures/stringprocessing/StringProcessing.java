@@ -67,6 +67,15 @@ public class StringProcessing {
         return false;
     }
 
+    public boolean arrayContains(List<Character> charArray, char charToFind) {
+        for (int i = 0; i < charArray.size(); i++) {
+            if (charArray.get(i) == charToFind) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean stringContains(String str, char charToFind) {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == charToFind) {
@@ -91,4 +100,22 @@ public class StringProcessing {
         return true;
     }
 
+    public boolean isUnique(final String str) {
+        String string = str;
+        List<Character> uniqueLetters = new ArrayList<>();
+
+        for (int i = 0; i < string.length(); i++) {
+            if (this.arrayContains(uniqueLetters, string.charAt(i))) {
+                return false;
+            }
+            uniqueLetters.add(string.charAt(i));
+    }
+    return true;
+
+    }
+
+    public String integerToString(final int num) {
+        int number = num;
+        return "" + number;
+    }
 }

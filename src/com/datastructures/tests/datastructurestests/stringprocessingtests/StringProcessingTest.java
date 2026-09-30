@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class StringProcessingTest {
     public void main(String[] args) {
         StringProcessing test = new StringProcessing();
-        boolean result = test.isAnagram("rail safjey", "fairy tales");
+        boolean result = test.isUnique("abcheksb");
         System.out.println(result);
     }
 }
