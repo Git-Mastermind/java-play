@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class RecursionTest {
     public static void main(String[] args) {
         Recursion recursion = new Recursion();
-        recursion.highestCheck();
-   }
+        int num = 1;
+        int[] listedLint = recursion.convertNumberToDigits(num);
+        recursion.printArray(listedLint);
+    }
 }
- 

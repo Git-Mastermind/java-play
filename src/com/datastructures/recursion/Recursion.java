@@ -57,7 +57,7 @@ public class Recursion {
     public int findAllConsonentsIterative(String str) {
         List<Character> vowels = new ArrayList<>(List.of('a', 'e', 'i', 'o', 'u'));
         int consonentCounter = 0;
-        
+
         for (int i = 0; i < str.length(); i++) {
             if (!vowels.contains(str.charAt(i))) {
                 consonentCounter++;
@@ -108,7 +108,7 @@ public class Recursion {
         }
         System.out.println(n);
         this.countdown(--n);
-        
+
     }
 
     public int summation(int n) {
@@ -118,11 +118,11 @@ public class Recursion {
         return n + this.summation(--n);
     }
 
-    public int countDigits(int n) {
-        if (n == 0) {
+    public int lengthOfNumber(int num) {
+        if (num == 0) {
             return 0;
         }
-        return 1 + this.countDigits(n / 10);
+        return 1 + this.lengthOfNumber(num / 10);
 
     }
 
@@ -160,14 +160,52 @@ public class Recursion {
         return isPalindrome(str, ++leftIndex, --rightIndex);
     }
 
-    public void maxInArray(List<Integer> array) {
-
+    public int reverseInt(int n) {
+        int length = this.lengthOfNumber(n);
+        int iterations = 0;
+        return this.reverseInt(n, length, iterations);
     }
 
-    public void maxInArray(List<Integer> array, int tempHighest) {
-        
+    public int reverseInt(int n, int length, int iterations) {
+        if (length == iterations) {
+            return 0;
+        }
+        return this.concatenateInt((n % 10), this.reverseInt(n / 10, length, ++iterations));
     }
 
-    
+    public int[] reverseIntUsingArray(int n) {
+        int[] intArray = new int[this.lengthOfNumber(n)];
+        int arrayLength = this.lengthOfNumber(n);
+
+        for (int i = 0; i < arrayLength; i++) {
+            intArray[i] = n % 10;
+            n /= 10;
+        }
+
+        return intArray;
+    }
+
+    public int concatenateInt(int num1, int num2) {
+        return (num1 * 10) + num2;
+    }
+
+    public int[] convertNumberToDigits(final int numberOriginal) {
+        int number = numberOriginal;
+        int[] digitsArray = new int[this.lengthOfNumber(number)];
+
+        for (int i = 1; i <= digitsArray.length; i++) {
+            digitsArray[digitsArray.length - i] = number % 10;
+            number /= 10;
+        }
+
+        return digitsArray;
+    }
+
+    public void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + ", ");
+        }
+    }
+
 
 }
