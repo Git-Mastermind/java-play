@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class StringProcessingTest {
     public void main(String[] args) {
         StringProcessing test = new StringProcessing();
-        boolean result = test.isUnique("abcheksb");
-        System.out.println(result);
+        int num = 0;
+        System.out.println(test.findNextDigitsUsingLookAndSay(num));
     }
 }

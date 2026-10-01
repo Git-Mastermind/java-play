@@ -38,8 +38,7 @@ public class StringProcessing {
     }
 
     public List<Integer> findNextDigitsUsingLookAndSay(final int num) {
-        Recursion recursion = new Recursion();
-        int[] numArray = recursion.convertNumberToDigits(num);
+        int[] numArray = Recursion.convertNumberToDigits(num);
         List<Integer> nextNumInLookAndSaySequence = new ArrayList<>();
 
         int i = 0;
@@ -117,5 +116,22 @@ public class StringProcessing {
     public String integerToString(final int num) {
         int number = num;
         return "" + number;
+    }
+
+    public int stringToInteger(final String str) {
+        String string = str;
+        int[] intArray = new int[string.length()];
+        int resultingInt = 0;
+        double maxPlaceValue = 10;
+
+        for (int i = 0; i < string.length(); i++) {
+            intArray[i] = string.charAt(i);
+        }
+        maxPlaceValue = Math.pow(10, intArray.length - 1);
+        for (int i = 0; i < intArray.length; i++) {
+            resultingInt += intArray[i] * maxPlaceValue;
+            maxPlaceValue /= 10;
+        }
+        return resultingInt;
     }
 }

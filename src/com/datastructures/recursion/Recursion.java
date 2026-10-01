@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recursion {
-    public char uppercaseLetterInStringIterative(String str) {
-        List<Character> listedStr = this.toArray(str);
+
+    private Recursion() {
+
+    }
+
+    public static char uppercaseLetterInStringIterative(String str) {
+        List<Character> listedStr = toArray(str);
 
         for (int i = 0; i < listedStr.size(); i++) {
             if (Character.isUpperCase(listedStr.get(i))) {
@@ -15,7 +20,7 @@ public class Recursion {
         return '0';
     }
 
-    public void uppercaseLetterInStringRecursive(String str, int index) {
+    public static void uppercaseLetterInStringRecursive(String str, int index) {
         if (index == str.length() - 1) {
             System.out.println("No uppercase letters found");
             return;
@@ -24,11 +29,11 @@ public class Recursion {
             System.out.println(str.charAt(index));
             return;
         }
-        this.uppercaseLetterInStringRecursive(str, index + 1);
+        uppercaseLetterInStringRecursive(str, index + 1);
 
     }
 
-    public List<Character> toArray(String str) {
+    public static List<Character> toArray(String str) {
         List<Character> listedString = new ArrayList<>();
 
         for (int i = 0; i < str.length(); i++) {
@@ -37,8 +42,8 @@ public class Recursion {
         return listedString;
     }
 
-    public int lengthOfStringIterative(String str) {
-        List<Character> listedStr = this.toArray(str);
+    public static int lengthOfStringIterative(String str) {
+        List<Character> listedStr = toArray(str);
         int counter = 0;
 
         for (int i = 0; i < listedStr.size(); i++) {
@@ -47,11 +52,11 @@ public class Recursion {
         return counter;
     }
 
-    public int lengthOfStringRecursive(String str, int index) {
+    public static int lengthOfStringRecursive(String str, int index) {
         if (index == str.length() - 1) {
             return 1;
         }
-        return 1 + this.lengthOfStringRecursive(str, ++index);
+        return 1 + lengthOfStringRecursive(str, ++index);
     }
 
     public int findAllConsonentsIterative(String str) {
@@ -66,28 +71,28 @@ public class Recursion {
         return consonentCounter;
     }
 
-    public int multiplyRecursive(int num1, int num2) {
+    public static int multiplyRecursive(int num1, int num2) {
         if (num2 == 0) {
             return 0;
         }
-        return num1 + this.multiplyRecursive(num1, num2 - 1);
+        return num1 + multiplyRecursive(num1, num2 - 1);
     }
 
-    public int factorial(int num) {
+    public static int factorial(int num) {
         if (num == 1) {
             return 1;
         }
-        return num * this.factorial(num - 1);
+        return num * factorial(num - 1);
     }
 
-    public int lengthOfArray(List<Integer> array, int index) {
+    public static int lengthOfArray(List<Integer> array, int index) {
         if (index == array.size() - 1) {
             return 1;
         }
-        return 1 + this.lengthOfArray(array, ++index);
+        return 1 + lengthOfArray(array, ++index);
     }
 
-    public boolean isHighest(List<Integer> array, int checkNum) {
+    public static boolean isHighest(List<Integer> array, int checkNum) {
         int tempHighest = 0;
         for (int num : array) {
             if (num > tempHighest) {
@@ -102,55 +107,55 @@ public class Recursion {
 
     // level 1
 
-    public void countdown(int n) {
+    public static void countdown(int n) {
         if (n == 0) {
             return;
         }
         System.out.println(n);
-        this.countdown(--n);
+        countdown(--n);
 
     }
 
-    public int summation(int n) {
+    public static int summation(int n) {
         if (n == 1) {
             return 1;
         }
-        return n + this.summation(--n);
+        return n + summation(--n);
     }
 
-    public int lengthOfNumber(int num) {
+    public static int lengthOfNumber(int num) {
         if (num == 0) {
             return 0;
         }
-        return 1 + this.lengthOfNumber(num / 10);
+        return 1 + lengthOfNumber(num / 10);
 
     }
 
     // level 2
 
-    public int digitSum(int n) {
+    public static int digitSum(int n) {
         if (n == 0) {
             return 0;
         }
-        return (n % 10) + this.digitSum(n / 10);
+        return (n % 10) + digitSum(n / 10);
     }
 
-    public String reverseString(String str) {
+    public static String reverseString(String str) {
         return reverseString(str, 0);
     }
 
-    private String reverseString(String str, int index) {
+    private static String reverseString(String str, int index) {
         if (index == str.length() - 1) {
             return "" + str.charAt(index);
         }
-        return this.reverseString(str, index + 1) + str.charAt(index);
+        return reverseString(str, index + 1) + str.charAt(index);
     }
 
-    public boolean isPalindrome(String str) {
-        return this.isPalindrome(str, 0, str.length() - 1);
+    public static boolean isPalindrome(String str) {
+        return isPalindrome(str, 0, str.length() - 1);
     }
 
-    public boolean isPalindrome(String str, int leftIndex, int rightIndex) {
+    public static boolean isPalindrome(String str, int leftIndex, int rightIndex) {
         if (leftIndex >= rightIndex) {
             return true;
         }
@@ -160,22 +165,22 @@ public class Recursion {
         return isPalindrome(str, ++leftIndex, --rightIndex);
     }
 
-    public int reverseInt(int n) {
-        int length = this.lengthOfNumber(n);
+    public static int reverseInt(int n) {
+        int length = lengthOfNumber(n);
         int iterations = 0;
-        return this.reverseInt(n, length, iterations);
+        return reverseInt(n, length, iterations);
     }
 
-    public int reverseInt(int n, int length, int iterations) {
+    public static int reverseInt(int n, int length, int iterations) {
         if (length == iterations) {
             return 0;
         }
-        return this.concatenateInt((n % 10), this.reverseInt(n / 10, length, ++iterations));
+        return concatenateInt((n % 10), reverseInt(n / 10, length, ++iterations));
     }
 
-    public int[] reverseIntUsingArray(int n) {
-        int[] intArray = new int[this.lengthOfNumber(n)];
-        int arrayLength = this.lengthOfNumber(n);
+    public static int[] reverseIntUsingArray(int n) {
+        int[] intArray = new int[lengthOfNumber(n)];
+        int arrayLength = lengthOfNumber(n);
 
         for (int i = 0; i < arrayLength; i++) {
             intArray[i] = n % 10;
@@ -185,13 +190,17 @@ public class Recursion {
         return intArray;
     }
 
-    public int concatenateInt(int num1, int num2) {
+    public static int concatenateInt(int num1, int num2) {
         return (num1 * 10) + num2;
     }
 
-    public int[] convertNumberToDigits(final int numberOriginal) {
+    public static int[] convertNumberToDigits(final int numberOriginal) {
         int number = numberOriginal;
-        int[] digitsArray = new int[this.lengthOfNumber(number)];
+        int lengthOfNumber = lengthOfNumber(number);
+        if (lengthOfNumber == 0) {
+            lengthOfNumber = 1;
+        }
+        int[] digitsArray = new int[lengthOfNumber];
 
         for (int i = 1; i <= digitsArray.length; i++) {
             digitsArray[digitsArray.length - i] = number % 10;
@@ -201,9 +210,9 @@ public class Recursion {
         return digitsArray;
     }
 
-    public List<Integer> convertNumberToDigitsArrayList(final int num) {
+    public static List<Integer> convertNumberToDigitsArrayList(final int num) {
         int number = num;
-        int lengthOfNumber = this.lengthOfNumber(number);
+        int lengthOfNumber = lengthOfNumber(number);
         List<Integer> digitsArray = new ArrayList<>();
 
         for (int i = 1; i <= lengthOfNumber; i++) {
@@ -214,7 +223,7 @@ public class Recursion {
         return digitsArray;
     }
 
-    public void printArray(int[] array) {
+    public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ", ");
         }
