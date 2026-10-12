@@ -36,7 +36,7 @@ public class Stack<T> {
         if (inputStack.size() != this.size()) {
             return false;
         }
-        for (int i = 0; i <= this.size();) {
+        for (int i = 0; i < this.size();) {
             if (inputStack.pop() != this.pop()) {
                 return false;
             }

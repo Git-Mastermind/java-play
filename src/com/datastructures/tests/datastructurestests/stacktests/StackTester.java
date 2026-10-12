@@ -4,16 +4,17 @@ import com.datastructures.stack.Stack;
 
 public class StackTester {
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(5);
-        stack.push(7);
-        stack.push(2);
-        stack.push(1);
+        Stack<Integer> stack1 = new Stack<>();
+        Stack<Integer> stack2 = new Stack<>();
+        stack1.push(1);
+        stack1.push(2);
+        stack2.push(1);
+        stack2.push(9);
+        stack2.push(1);
 
-        Integer topElement = stack.pop();
-        System.out.println(topElement);
-
-        topElement = stack.peek();
-        System.out.println(topElement);
-    }
+        System.out.println(stack1.isEqual(stack2));
+        
+    } 
 }
+
+//"{{}{}{}{{}}}}}"
