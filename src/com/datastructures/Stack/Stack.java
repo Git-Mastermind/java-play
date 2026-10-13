@@ -2,9 +2,18 @@ package com.datastructures.stack;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Stack<T> {
     List<T> stack;
+    final static List<Character> OPENING_PARENTHESIS = List.of('{', '(', '[');
+    final static Map<Character, Character> MAP_OF_PARENTHESIS = new HashMap<>();
+    static {
+        MAP_OF_PARENTHESIS.put('}', '{');
+        MAP_OF_PARENTHESIS.put(')', '(');
+        MAP_OF_PARENTHESIS.put(']', '[');
+    }
 
     public Stack() {
         stack = new ArrayList<>();
@@ -64,14 +73,12 @@ public class Stack<T> {
     }
 
     public boolean isParenthesisBalanced(String parenthesis) {
-        List<Character> openingParenthesis = new ArrayList<>(List.of('{', '(', '['));
-        List<Character> closingParenthesis = new ArrayList<>(List.of('}', ')', ']'));
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < parenthesis.length(); i++) {
-            if (openingParenthesis.contains(parenthesis.charAt(i))) {
+            if (OPENING_PARENTHESIS.contains(parenthesis.charAt(i))) {
                 stack.push(parenthesis.charAt(i));
             } else {
-                if (stack.size() == 0 || stack.pop() != openingParenthesis.get(closingParenthesis.indexOf(parenthesis.charAt(i)))) {
+                if (stack.size() == 0 || stack.pop() != MAP_OF_PARENTHESIS.get(parenthesis.charAt(i))) {
                     return false;
                 }
             }
