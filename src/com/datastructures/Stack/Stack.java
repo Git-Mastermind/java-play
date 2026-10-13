@@ -71,10 +71,9 @@ public class Stack<T> {
             if (openingParenthesis.contains(parenthesis.charAt(i))) {
                 stack.push(parenthesis.charAt(i));
             } else {
-                if (stack.size() == 0) {
+                if (stack.size() == 0 || stack.pop() != openingParenthesis.get(closingParenthesis.indexOf(parenthesis.charAt(i)))) {
                     return false;
                 }
-                stack.pop();
             }
         }
         if (stack.size() == 0) {
