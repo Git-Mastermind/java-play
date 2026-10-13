@@ -44,6 +44,25 @@ public class Stack<T> {
         return true;
     }
 
+    public boolean isCurlyBracesBalanced(String braces) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < braces.length(); i++) {
+            if (braces.charAt(i) == '{') {
+                stack.push(braces.charAt(i));
+            }
+            else {
+                if (stack.size() == 0) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+        if (stack.size() == 0) {
+            return true;
+        }
+        return false;
+        
+    }
 
 
 }
