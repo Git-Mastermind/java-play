@@ -1,10 +1,11 @@
 package com.datastructures.stack;
+
 import java.util.List;
 import java.util.ArrayList;
 
-
 public class Stack<T> {
     List<T> stack;
+
     public Stack() {
         stack = new ArrayList<>();
     }
@@ -49,8 +50,7 @@ public class Stack<T> {
         for (int i = 0; i < braces.length(); i++) {
             if (braces.charAt(i) == '{') {
                 stack.push(braces.charAt(i));
-            }
-            else {
+            } else {
                 if (stack.size() == 0) {
                     return false;
                 }
@@ -61,8 +61,27 @@ public class Stack<T> {
             return true;
         }
         return false;
-        
     }
 
+    public boolean isParenthesisBalanced(String parenthesis) {
+        List<Character> openingParenthesis = new ArrayList<>(List.of('{', '(', '['));
+        List<Character> closingParenthesis = new ArrayList<>(List.of('}', ')', ']'));
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < parenthesis.length(); i++) {
+            if (openingParenthesis.contains(parenthesis.charAt(i))) {
+                stack.push(parenthesis.charAt(i));
+            } else {
+                if (stack.size() == 0) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+        if (stack.size() == 0) {
+            return true;
+        }
+        return false;
+
+    }
 
 }

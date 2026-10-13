@@ -6,8 +6,8 @@ public class StackTester {
     public static void main(String[] args) {
         Stack<Integer> stackTester = new Stack<>();
         
-        String braces = "{{{{{}}}}}";
-        System.out.println(stackTester.isCurlyBracesBalanced(braces));
+        String parenthesis = "{()()[}";
+        System.out.println(stackTester.isParenthesisBalanced(parenthesis));
     } 
 }
 
