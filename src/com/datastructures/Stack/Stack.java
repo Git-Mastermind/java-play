@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 public class Stack<T> {
     List<T> stack;
+    final static List<Character> PARENTHESIS = List.of('{', '(', '[', '}', ')', ']');
     final static List<Character> OPENING_PARENTHESIS = List.of('{', '(', '[');
     final static Map<Character, Character> MAP_OF_PARENTHESIS = new HashMap<>();
     static {
@@ -87,7 +88,46 @@ public class Stack<T> {
             return true;
         }
         return false;
+    }
 
+    public boolean isParenthesisBalanced(StringBuilder parenthesis) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < parenthesis.length(); i++) {
+            if (OPENING_PARENTHESIS.contains(parenthesis.charAt(i))) {
+                stack.push(parenthesis.charAt(i));
+            } else {
+                if (stack.size() == 0 || stack.pop() != MAP_OF_PARENTHESIS.get(parenthesis.charAt(i))) {
+                    return false;
+                }
+            }
+        }
+        if (stack.size() == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isCodeSnippetParenthesisBalanced(String codeSnippet) {
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < codeSnippet.length(); i++) {
+            if (PARENTHESIS.contains(codeSnippet.charAt(i))) {
+                if (OPENING_PARENTHESIS.contains(codeSnippet.charAt(i))) {
+                    stack.push(codeSnippet.charAt(i));
+                }
+                else {
+                    if (stack.size() == 0 || stack.pop() != MAP_OF_PARENTHESIS.get(codeSnippet.charAt(i))) {
+                        return false;
+                    }
+                }
+            }
+            
+        }
+        if (stack.size() == 0) {
+            return true;
+        }
+        return false;
+        
     }
 
 }

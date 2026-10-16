@@ -6,8 +6,8 @@ public class StackTester {
     public static void main(String[] args) {
         Stack<Integer> stackTester = new Stack<>();
 
-        String parenthesis = "{(}";
-        System.out.println(stackTester.isParenthesisBalanced(parenthesis));
+        String codeSnippet = "public static void {public void )}";
+        System.out.println(stackTester.isCodeSnippetParenthesisBalanced(codeSnippet));
     }
 }
 
