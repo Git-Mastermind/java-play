@@ -15,7 +15,9 @@ public class SinglyLinkedList<T> {
 
 
 
-
+    public Node<T> head() {
+        return this.head;
+    }
 
     public int size() {
         int counter = 1;
