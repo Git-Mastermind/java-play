@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class Queue<T> {
+public class MyQueue<T> {
     List<T> queue = new ArrayList<>();
 
     public void append(T value) {

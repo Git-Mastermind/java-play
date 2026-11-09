@@ -1,6 +1,6 @@
 package com.datastructures.binarytrees;
 
-import com.datastructures.queue.Queue;
+import com.datastructures.queue.MyQueue;
 import com.datastructures.stack.Stack;
 
 public class BinaryTree<T> {
@@ -31,7 +31,7 @@ public class BinaryTree<T> {
     public StringBuilder levelOrderTraversal() {
 
         Node<T> node = new Node<>(null);
-        Queue<T> queue = new Queue<>();
+        MyQueue<T> queue = new MyQueue<>();
         queue.append(this.root.value);
         StringBuilder traversalNotebook = new StringBuilder();
 
@@ -50,7 +50,7 @@ public class BinaryTree<T> {
     }
 
     public StringBuilder reverseLevelOrderTraversal() {
-        Queue<T> queue = new Queue<>();
+        MyQueue<T> queue = new MyQueue<>();
         Stack<T> stack = new Stack<>();
 
         Node<T> node = new Node<>(null);
@@ -89,7 +89,7 @@ public class BinaryTree<T> {
 
     public int size() {
         Node<T> node = new Node<>(null);
-        Queue<T> queue = new Queue<>();
+        MyQueue<T> queue = new MyQueue<>();
         queue.append(this.root.value);
 
         int counter = 0;

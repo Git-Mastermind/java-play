@@ -1,10 +1,10 @@
 package com.datastructures.binarytrees;
-import com.datastructures.queue.Queue;
+import com.datastructures.queue.MyQueue;
 
 
 public class Tester {
     public static void main(String[] args) {
-        Queue<Integer> queue = new Queue<Integer>();
+        MyQueue<Integer> queue = new MyQueue<Integer>();
 
 
   
