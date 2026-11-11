@@ -1,4 +1,4 @@
-package com.datastructures.tests.othertests;
+package com.datastructures;
 
 import java.util.Queue;
 import java.util.LinkedList;
